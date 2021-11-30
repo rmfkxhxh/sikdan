@@ -7,7 +7,7 @@ const session = require("express-session")
 const dotenv = require("dotenv").config();
 
 app.use(express.static('../views'))
-// app.use(express.static('../views'))
+app.use(express.static('../static'))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -20,7 +20,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: {
-        maxAge: (1000 * 60 * 100) //milisecond
+        maxAge: (1000 * 60 * 100) //miliseconds
     }
 }));
 
