@@ -32,8 +32,16 @@ const port = 5000
 const host = '127.0.0.1'
 
 app.get('/', (req, res) => {
-    
-    res.render('event')
+    res.render('head')
+})
+app.get('/for', (req, res) => {
+    res.render('foreach')
+})
+app.get('/or', (req, res) => {
+    res.render('origin_event')
+})
+app.get('/h', (req, res) => {
+    res.render('head')
 })
 
 
