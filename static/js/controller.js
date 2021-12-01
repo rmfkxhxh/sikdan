@@ -103,7 +103,7 @@ function fnAjax(opt) {
 					setStorageData(opt.url, false);
 
 					console.log(xhr.readyState, strError);
-					location.href = '/login/login';
+					// location.href = '/login/login';
 				},
 				complete: function () {
 					if (opt.complete != undefined) opt.complete();
@@ -166,10 +166,10 @@ function fnDefCallback(data, opt) {
 		case '000000400':
 			try {
 				//parent.document.location.href = '/view/login.json';
-				parent.document.location.href = '/login/login';
+				// parent.document.location.href = '/login/login';
 			} catch (e) {
 				//location.href = '/view/login.json';
-				location.href = '/login/login';
+				// location.href = '/login/login';
 			}
 			break;
 		// 권한 예외 메세지
@@ -1240,83 +1240,83 @@ function fnCheckDuplicate3Character(str) {
 	}
 	return false;
 }
-//callback : function
-function fnLoginCheck(callback) {
-	fnAjax({
-		url: '/comn/getSession',
-		success: function (data) {
-			if (data.isSession == 'N') {
-				fnLoginPage();
-			} else {
-				if (callback) {
-					var callbacks = $.Callbacks();
-					callbacks.add(callback);
-					callbacks.fire();
-				}
-			}
-		},
-	});
-}
+// //callback : function
+// function fnLoginCheck(callback) {
+// 	fnAjax({
+// 		url: '/comn/getSession',
+// 		success: function (data) {
+// 			if (data.isSession == 'N') {
+// 				fnLoginPage();
+// 			} else {
+// 				if (callback) {
+// 					var callbacks = $.Callbacks();
+// 					callbacks.add(callback);
+// 					callbacks.fire();
+// 				}
+// 			}
+// 		},
+// 	});
+// }
 
-function fnLoginChkYN(callback, param) {
-	fnAjax({
-		url: '/comn/getSession',
-		success: function (data) {
-			if (data.isSession == 'Y') {
-				var callbacks = $.Callbacks();
-				callbacks.add(callback);
-				callbacks.fire();
-			} else if (data.isSession == 'N') {
-				//console.log(102938);
-				fnLoginPage(param);
-			}
-		},
-	});
-}
+// function fnLoginChkYN(callback, param) {
+// 	fnAjax({
+// 		url: '/comn/getSession',
+// 		success: function (data) {
+// 			if (data.isSession == 'Y') {
+// 				var callbacks = $.Callbacks();
+// 				callbacks.add(callback);
+// 				callbacks.fire();
+// 			} else if (data.isSession == 'N') {
+// 				//console.log(102938);
+// 				fnLoginPage(param);
+// 			}
+// 		},
+// 	});
+// }
 
-function fnLoginPage(param, prevInfo) {
-	if (param != null || param != undefined) {
-		if (param.indexOf('prevInfo=PICKUP') != -1) {
-			prevInfo = 'PICKUP';
-		}
-	}
+// function fnLoginPage(param, prevInfo) {
+// 	if (param != null || param != undefined) {
+// 		if (param.indexOf('prevInfo=PICKUP') != -1) {
+// 			prevInfo = 'PICKUP';
+// 		}
+// 	}
 
-	if (param && prevInfo) {
-		fnConfirm('로그인이 필요한 서비스입니다.<br/>로그인하시겠습니까?', function (e) {
-			location.href = '/login/login?reurl=' + param;
-		});
-	} else if (prevInfo != '' || prevInfo == undefined) {
-		fnConfirm('로그인이 필요한 서비스입니다.<br/>로그인하시겠습니까?', function (e) {
-			location.href = '/login/login?reurl=' + encodeURIComponent(location.href) + '&prevInfo=' + prevInfo;
-		});
-	} else {
-		fnConfirm('로그인이 필요한 서비스입니다.<br/>로그인하시겠습니까?', function (e) {
-			location.href = '/login/login?reurl=' + encodeURIComponent(location.href);
-		});
-	}
-}
+// 	if (param && prevInfo) {
+// 		fnConfirm('로그인이 필요한 서비스입니다.<br/>로그인하시겠습니까?', function (e) {
+// 			location.href = '/login/login?reurl=' + param;
+// 		});
+// 	} else if (prevInfo != '' || prevInfo == undefined) {
+// 		fnConfirm('로그인이 필요한 서비스입니다.<br/>로그인하시겠습니까?', function (e) {
+// 			location.href = '/login/login?reurl=' + encodeURIComponent(location.href) + '&prevInfo=' + prevInfo;
+// 		});
+// 	} else {
+// 		fnConfirm('로그인이 필요한 서비스입니다.<br/>로그인하시겠습니까?', function (e) {
+// 			location.href = '/login/login?reurl=' + encodeURIComponent(location.href);
+// 		});
+// 	}
+// }
 
-//callback : function
-//로그인 상태일때 로그인체크
-function fnLoginCheck2(callback) {
-	var flag = false;
-	fnAjax({
-		url: '/comn/getSession',
-		success: function (data) {
-			//console.log(data);
-			if (data.isSession == 'Y') {
-				fnAlert('회원 로그인 상태 입니다.');
-				return;
-			} else {
-				if (callback) {
-					var callbacks = $.Callbacks();
-					callbacks.add(callback);
-					callbacks.fire();
-				}
-			}
-		},
-	});
-}
+// //callback : function
+// //로그인 상태일때 로그인체크
+// function fnLoginCheck2(callback) {
+// 	var flag = false;
+// 	fnAjax({
+// 		url: '/comn/getSession',
+// 		success: function (data) {
+// 			//console.log(data);
+// 			if (data.isSession == 'Y') {
+// 				fnAlert('회원 로그인 상태 입니다.');
+// 				return;
+// 			} else {
+// 				if (callback) {
+// 					var callbacks = $.Callbacks();
+// 					callbacks.add(callback);
+// 					callbacks.fire();
+// 				}
+// 			}
+// 		},
+// 	});
+// }
 
 /**
  * 이메일 체크

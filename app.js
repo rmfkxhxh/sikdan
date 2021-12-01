@@ -6,8 +6,8 @@ const bodyParser = require("body-parser")
 const session = require("express-session")
 const dotenv = require("dotenv").config();
 
-app.use(express.static('../views'))
-app.use(express.static('../static'))
+app.use(express.static('./views'))
+app.use(express.static('./static'))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -26,7 +26,7 @@ app.use(session({
 
 var Users = [];
 app.set('view engine', 'pug');
-app.set("views", '../views');
+app.set("views", './views');
 
 const port = 5000
 const host = '127.0.0.1'
@@ -42,6 +42,9 @@ app.get('/or', (req, res) => {
 })
 app.get('/h', (req, res) => {
     res.render('head')
+})
+app.get('/ev', (req, res) => {
+    res.render('dig')
 })
 
 
