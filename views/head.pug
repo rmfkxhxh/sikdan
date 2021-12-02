@@ -7,14 +7,7 @@ head
   link(rel='shortcut icon', href='https://www.greating.co.kr/front_mo/images/favicon.png')
   
   script(src='./htmlfiles/iframe_api')
-
-  //- link(rel='stylesheet', href='./css/layout.css', type='text/css')
-  //- link(rel='stylesheet', href='./css/memberJoin.css', type='text/css')
-  //- link(rel='stylesheet', href='./css/app.css', type='text/css')
   link(rel='stylesheet', href='./css/main.css', type='text/css')
-  //- link(rel='stylesheet', href='./css/normalize.css', type='text/css')
-  //- link(rel='stylesheet', href='./css/common.css', type='text/css')
-  //- link(rel='stylesheet', type='text/css', href='/css/jquery-ui.css')
   script(src='/css/main.js')
   script(src='./htmlfiles/vendor.js')
   script(src='./htmlfiles/f(1).txt')
@@ -253,8 +246,11 @@ head
               img(src='./htmlfiles/icon_header_cart.png', alt='장바구니')
   main#contents.hd__eventList
     ul.breadcrumb
-      each val in ['HOME', '이벤트', '진행중 이벤트']
+      each val in breadcrumbs
         li=val
+    
+
+
 
 // 개발팀 공통 js include 시작
 script(src='./htmlfiles/library.js')
@@ -282,7 +278,7 @@ script(src='./js/searchController.js')
 //- ----------------------------------------------
 // 개발팀 공통 js include 끝
 // 개발 담당자 js include 시작
-script(src='./htmlfiles/eventListController.js')
+//- script(src='./htmlfiles/eventListController.js')
 // 개발 담당자 js include 끝
 .progress(style='display: none;')
   img(src='./htmlfiles/progress.gif', alt='')

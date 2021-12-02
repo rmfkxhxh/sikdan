@@ -28,24 +28,35 @@ var Users = [];
 app.set('view engine', 'pug');
 app.set("views", './views');
 
-const port = 5000
+const port = 4000
 const host = '127.0.0.1'
 
 app.get('/', (req, res) => {
-    res.render('head')
+    if(req.session.user !== undefined) {
+        console.log(req.session.user)
+        res.render('event', {breadcrumbs: ['HOME', '이벤트', '진행중 이벤트']})
+    }
+    else {
+        res.render('head', {breadcrumbs: ['HOME']})
+    }
 })
-app.get('/for', (req, res) => {
-    res.render('foreach')
+app.get('/login', (req, res) => {
+    res.render('login', {breadcrumbs: ['Login']})
 })
-app.get('/or', (req, res) => {
-    res.render('origin_event')
+app.post('/login', (req, res) => {
+    console.log('req:', req.body)
+    req.session.user = req.body
+    res.redirect('/')
 })
+
+app.get('/event', (req, res) => {
+    res.render('event', {breadcrumbs: ['HOME', '이벤트', '진행중 이벤트']})
+})
+
 app.get('/h', (req, res) => {
-    res.render('head')
+    res.render('head', {breadcrumbs: ['HOME', '케어식단']})
 })
-app.get('/ev', (req, res) => {
-    res.render('dig')
-})
+
 
 
 // app.get('/information', (req, res) => {
