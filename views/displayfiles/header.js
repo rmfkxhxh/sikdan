@@ -23,6 +23,8 @@ if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') !
 	
 }
 
+
+
 $(function() {	
 	// 메인탑배너
 	if(localStorage.getItem("popupExpires"+"Today_MainTopBanner") != undefined){

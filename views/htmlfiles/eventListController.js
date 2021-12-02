@@ -183,23 +183,23 @@ function fnWinner(type,id,winnerCnt){
 	*/
 }
 
-function fnTypeChange(type){
-	$('.progress').show();
-	$('.eventList__cont').find("li").removeClass("tab-menu__list--on");
-	$('.dvTap[dvType='+type+']').parent().addClass("tab-menu__list--on");
+// function fnTypeChange(type){
+// 	$('.progress').show();
+// 	$('.eventList__cont').find("li").removeClass("tab-menu__list--on");
+// 	$('.dvTap[dvType='+type+']').parent().addClass("tab-menu__list--on");
 	
-	$('.tab-content').removeClass("tab-content--show");
+// 	$('.tab-content').removeClass("tab-content--show");
 
-	if ( type == "E" ) {
-		$('.event-end').addClass("tab-content--show");
-		$('.breadcrumb li').last().text("종료된 이벤트");
-	} else {
-		$('.event-ing').addClass("tab-content--show");
-		$('.breadcrumb li').last().text("진행 중 이벤트");
-	}
+// 	if ( type == "E" ) {
+// 		$('.event-end').addClass("tab-content--show");
+// 		$('.breadcrumb li').last().text("종료된 이벤트");
+// 	} else {
+// 		$('.event-ing').addClass("tab-content--show");
+// 		$('.breadcrumb li').last().text("진행 중 이벤트");
+// 	}
 	
-	fnGetEvent();
-}
+// 	fnGetEvent();
+// }
 
 Handlebars.registerHelper("switch", function(value,options){
     this.switch_value = value;

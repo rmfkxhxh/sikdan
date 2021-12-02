@@ -47,6 +47,10 @@ app.post('/login', (req, res) => {
     res.redirect('/')
 })
 
+app.get('/display', (req, res) => {
+    res.render('display', {breadcrumbs: ['HOME', '기획전']})
+})
+
 app.get('/event', (req, res) => {
     res.render('event', {breadcrumbs: ['HOME', '이벤트', '진행중 이벤트']})
 })
