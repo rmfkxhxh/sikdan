@@ -5,10 +5,8 @@ const bodyParser = require("body-parser")
 // const upload = multer();
 const session = require("express-session")
 const dotenv = require("dotenv").config();
-
 app.use(express.static('./views'))
 app.use(express.static('./static'))
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 // app.use(upload.array())
@@ -56,8 +54,6 @@ app.get('/event', (req, res) => {
 app.get('/h', (req, res) => {
     res.render('head', {breadcrumbs: ['HOME', '케어식단']})
 })
-
-
 
 // app.get('/information', (req, res) => {
 //     // res.writeHead(200, {'Content-Type':'text/plain; charset=utf-8'})

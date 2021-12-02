@@ -15,388 +15,274 @@ head
   script(src='./htmlfiles/vendor.js')
   include ./head.pug
   
-  main#contents.hd__eventList
-    .eventList.hd__inner1100
-      .eventList__sec
-        .eventList__banner.slick-initialized.slick-slider
+  body#eventList.hd
+    main#contents.hd__eventList
+      .eventList.hd__inner1100
+        .eventList__cont
+          ul.tab-menu-v2.clearfix
+            li.tab-menu__list.tab-menu__list--on(data-tab='eventOngoing')
+              a.dvTap(href='https://www.greating.co.kr/event/eventList#', dvtype='I') 진행 중 이벤트
+            li.tab-menu__list(data-tab='eventDone')
+              a.dvTap(href='https://www.greating.co.kr/event/eventList#', dvtype='E') 종료된 이벤트
+          #dvGoodsEventBannerEmpty.none-list(style='display:none')
+            .none-list__inner
+              p.none-list__txt 현재 진행중인 이벤트가 없습니다.
+          #dvGoodsEventBannerEnd.none-list(style='display:none')
+            .none-list__inner
+              p.none-list__txt 현재 종료된 이벤트가 없습니다.
+          // 진행 중 이벤트
+          ul#eventOngoing.event-ing.box.tab-content.tab-content--show
+            li.box__list
+              a(href='javascript:void(0);', onclick='fnBanner(1,6078);')
+                figure.box__list__thumb
+                  img(src='./htmlfiles/6FD8CEB94BD2464C8F8C83D0CE2FD4DC.jpg', alt='11월 구매 사은품 이벤트 ★')
+              //
+                <span class="box__list__title strong">11월 구매 사은품 이벤트 ★</span>
+                <span class="box__list__date">
+                2021-11-01 ~ 2021-11-30 <span class="box__list__dDay strong">D-0</span>
+                </span>
+            li.box__list
+              a(href='javascript:void(0);', onclick='fnBanner(1,6058);')
+                figure.box__list__thumb
+                  img(src='./htmlfiles/D7FE74103C71464694A7F97508933A01.jpg', alt='[11월 이벤트]신규가입하면 그리팅 인기상품이 990원')
+              //
+                <span class="box__list__title strong">[11월 이벤트]신규가입하면 그리팅 인기상품이 990원</span>
+                <span class="box__list__date">
+                2021-11-01 ~ 2021-11-30 <span class="box__list__dDay strong">D-0</span>
+                </span>
+            li.box__list
+              a(href='javascript:void(0);', onclick='fnBanner(1,6018);')
+                figure.box__list__thumb
+                  img(src='./htmlfiles/47AAD8CFA5B8413F92699147FA621611.jpg', alt='(11월) 앱 푸시 알림 동의+ 앱 다운로드 이벤트')
+              //
+                <span class="box__list__title strong">(11월) 앱 푸시 알림 동의+ 앱 다운로드 이벤트</span>
+                <span class="box__list__date">
+                2021-11-01 ~ 2021-11-30 <span class="box__list__dDay strong">D-0</span>
+                </span>
+            li.box__list
+              a(href='javascript:void(0);', onclick='fnBanner(1,6098);')
+                figure.box__list__thumb
+                  img(src='./htmlfiles/FEA877F985D948E8B1808820915D38A2.jpg', alt='그리팅 x 현대카드 M포인트 제휴 혜택')
+              //
+                <span class="box__list__title strong">그리팅 x 현대카드 M포인트 제휴 혜택</span>
+                <span class="box__list__date">
+                2021-10-28 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
+                </span>
+            li.box__list
+              a(href='javascript:void(0);', onclick='fnBanner(1,6038);')
+                figure.box__list__thumb
+                  img(src='./htmlfiles/DA3FB857DA34405BB4921F63E718FC31.jpg', alt='그리팅 카톡 채널 추가하고 최대 3만원 쿠폰 받자')
+              //
+                <span class="box__list__title strong">그리팅 카톡 채널 추가하고 최대 3만원 쿠폰 받자</span>
+                <span class="box__list__date">
+                2021-10-22 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
+                </span>
+            li.box__list
+              a(href='javascript:void(0);', onclick='fnBanner(1,5860);')
+                figure.box__list__thumb
+                  img(src='./htmlfiles/42D7E0EC43C04E96AF7FCF36B86EB8D9.jpg', alt='신한카드 제휴 할인 이벤트')
+              //
+                <span class="box__list__title strong">신한카드 제휴 할인 이벤트</span>
+                <span class="box__list__date">
+                2021-10-01 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
+                </span>
+            li.box__list
+              a(href='javascript:void(0);', onclick='fnBanner(1,5859);')
+                figure.box__list__thumb
+                  img(src='./htmlfiles/12740B5FD3014F3CA7114DFC68FEC75B.jpg', alt='삼성카드 LINK 제휴 할인 이벤트')
+              //
+                <span class="box__list__title strong">삼성카드 LINK 제휴 할인 이벤트</span>
+                <span class="box__list__date">
+                2021-10-01 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
+                </span>
+            li.box__list
+              a(href='javascript:void(0);', onclick='fnBanner(1,3878);')
+                figure.box__list__thumb
+                  img(src='./htmlfiles/29CBE8E2AC07486DB5B6EEA5E0561311.jpg', alt='(5월~) 2021 그리팅 신규가입 혜택 안내')
+              //
+                <span class="box__list__title strong">(5월~) 2021 그리팅 신규가입 혜택 안내</span>
+                <span class="box__list__date">
+                2021-05-01 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
+                </span>
+            li.box__list
+              a(href='javascript:void(0);', onclick='fnBanner(1,2998);')
+                figure.box__list__thumb
+                  img(src='./htmlfiles/AF68F4EB8EBF437DA4E1B68B58BDD2FA.jpg', alt='[제휴혜택] 현대백화점 우수고객')
+              //
+                <span class="box__list__title strong">[제휴혜택] 현대백화점 우수고객</span>
+                <span class="box__list__date">
+                2021-01-30 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
+                </span>
+          // //진행 중 이벤트
+          // 종료된 이벤트
+          ul#eventDone.event-end.box.tab-content
+          // //종료된 이벤트
+          // paging
+          #pageNation.pagenation
+            button.pageBtn_first(onclick="fnPgUtilRead('first')", style='display: none;')
+              span.hidden &#xCC98;&#xC74C;&#xC73C;&#xB85C;
+            button.pageBtn_prev(onclick="fnPgUtilRead('prev')", style='display: none;')
+              span.hidden &#xC774;&#xC804;
+            span#pager.pagenation__number
+              span.active.paging
+                span 1
+            button.pageBtn_next(onclick="fnPgUtilRead('next')", style='display: none;')
+              span.hidden &#xB2E4;&#xC74C;
+            button.pageBtn_end(onclick="fnPgUtilRead('last')", style='display: none;')
+              span.hidden &#xB9C8;&#xC9C0;&#xB9C9;
+          // //paging
+    // 플로팅 배너
+    aside#sideBanner.side-banner(style='top: 230px;')
+      // 사이드배너
+      .side-slide-wrap
+        #sideSlide.side-slide.slick-initialized.slick-slider
           .slick-list.draggable
-            .slick-track(style='opacity: 1; width: 0px;')
-              .slick-slide.slick-current.slick-active(data-slick-index='0', aria-hidden='false', style='width: 0px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;')
-                //- div
-                //-   .eventList__banner__list(style='width: 100%; display: inline-block;')
-                //-     a(onclick="javascript:goBannerLink(453,'이벤트 메인', '/event/eventList')", style='cursor:pointer;', tabindex='0')
-                //-       img(src='./htmlfiles/E81681768C78446FAC9BCCB59A227BF3.jpg', alt='1')
-        .slick-controller
-          button.slick-stop
-            span.hidden &#xC2AC;&#xB77C;&#xC774;&#xB4DC; &#xC815;&#xC9C0;
-          button.slick-play.hide
-            span.hidden &#xC2AC;&#xB77C;&#xC774;&#xB4DC; &#xC2E4;&#xD589;
-      .eventList__cont
-        ul.tab-menu-v2.clearfix
-          li.tab-menu__list.tab-menu__list--on(data-tab='eventOngoing')
-            a.dvTap(href='https://www.greating.co.kr/event/eventList#', dvtype='I') &#xC9C4;&#xD589; &#xC911; &#xC774;&#xBCA4;&#xD2B8;
-          li.tab-menu__list(data-tab='eventDone')
-            a.dvTap(href='https://www.greating.co.kr/event/eventList#', dvtype='E') &#xC885;&#xB8CC;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;
-        #dvGoodsEventBannerEmpty.none-list(style='display:none')
-          .none-list__inner
-            p.none-list__txt &#xD604;&#xC7AC; &#xC9C4;&#xD589;&#xC911;&#xC778; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
-        #dvGoodsEventBannerEnd.none-list(style='display:none')
-          .none-list__inner
-            p.none-list__txt &#xD604;&#xC7AC; &#xC885;&#xB8CC;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.
-        // 진행 중 이벤트
-        ul#eventOngoing.event-ing.box.tab-content.tab-content--show
-          li.box__list
-            a(href='javascript:void(0);', onclick='fnBanner(1,6078);')
-              figure.box__list__thumb
-                img(src='./htmlfiles/6FD8CEB94BD2464C8F8C83D0CE2FD4DC.jpg', alt='11월 구매 사은품 이벤트 ★')
-            //
-              <span class="box__list__title strong">11월 구매 사은품 이벤트 ★</span>
-              <span class="box__list__date">
-              2021-11-01 ~ 2021-11-30 <span class="box__list__dDay strong">D-0</span>
-              </span>
-          li.box__list
-            a(href='javascript:void(0);', onclick='fnBanner(1,6058);')
-              figure.box__list__thumb
-                img(src='./htmlfiles/D7FE74103C71464694A7F97508933A01.jpg', alt='[11월 이벤트]신규가입하면 그리팅 인기상품이 990원')
-            //
-              <span class="box__list__title strong">[11월 이벤트]신규가입하면 그리팅 인기상품이 990원</span>
-              <span class="box__list__date">
-              2021-11-01 ~ 2021-11-30 <span class="box__list__dDay strong">D-0</span>
-              </span>
-          li.box__list
-            a(href='javascript:void(0);', onclick='fnBanner(1,6018);')
-              figure.box__list__thumb
-                img(src='./htmlfiles/47AAD8CFA5B8413F92699147FA621611.jpg', alt='(11월) 앱 푸시 알림 동의+ 앱 다운로드 이벤트')
-            //
-              <span class="box__list__title strong">(11월) 앱 푸시 알림 동의+ 앱 다운로드 이벤트</span>
-              <span class="box__list__date">
-              2021-11-01 ~ 2021-11-30 <span class="box__list__dDay strong">D-0</span>
-              </span>
-          li.box__list
-            a(href='javascript:void(0);', onclick='fnBanner(1,6098);')
-              figure.box__list__thumb
-                img(src='./htmlfiles/FEA877F985D948E8B1808820915D38A2.jpg', alt='그리팅 x 현대카드 M포인트 제휴 혜택')
-            //
-              <span class="box__list__title strong">그리팅 x 현대카드 M포인트 제휴 혜택</span>
-              <span class="box__list__date">
-              2021-10-28 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
-              </span>
-          li.box__list
-            a(href='javascript:void(0);', onclick='fnBanner(1,6038);')
-              figure.box__list__thumb
-                img(src='./htmlfiles/DA3FB857DA34405BB4921F63E718FC31.jpg', alt='그리팅 카톡 채널 추가하고 최대 3만원 쿠폰 받자')
-            //
-              <span class="box__list__title strong">그리팅 카톡 채널 추가하고 최대 3만원 쿠폰 받자</span>
-              <span class="box__list__date">
-              2021-10-22 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
-              </span>
-          li.box__list
-            a(href='javascript:void(0);', onclick='fnBanner(1,5860);')
-              figure.box__list__thumb
-                img(src='./htmlfiles/42D7E0EC43C04E96AF7FCF36B86EB8D9.jpg', alt='신한카드 제휴 할인 이벤트')
-            //
-              <span class="box__list__title strong">신한카드 제휴 할인 이벤트</span>
-              <span class="box__list__date">
-              2021-10-01 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
-              </span>
-          li.box__list
-            a(href='javascript:void(0);', onclick='fnBanner(1,5859);')
-              figure.box__list__thumb
-                img(src='./htmlfiles/12740B5FD3014F3CA7114DFC68FEC75B.jpg', alt='삼성카드 LINK 제휴 할인 이벤트')
-            //
-              <span class="box__list__title strong">삼성카드 LINK 제휴 할인 이벤트</span>
-              <span class="box__list__date">
-              2021-10-01 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
-              </span>
-          li.box__list
-            a(href='javascript:void(0);', onclick='fnBanner(1,3878);')
-              figure.box__list__thumb
-                img(src='./htmlfiles/29CBE8E2AC07486DB5B6EEA5E0561311.jpg', alt='(5월~) 2021 그리팅 신규가입 혜택 안내')
-            //
-              <span class="box__list__title strong">(5월~) 2021 그리팅 신규가입 혜택 안내</span>
-              <span class="box__list__date">
-              2021-05-01 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
-              </span>
-          li.box__list
-            a(href='javascript:void(0);', onclick='fnBanner(1,2998);')
-              figure.box__list__thumb
-                img(src='./htmlfiles/AF68F4EB8EBF437DA4E1B68B58BDD2FA.jpg', alt='[제휴혜택] 현대백화점 우수고객')
-            //
-              <span class="box__list__title strong">[제휴혜택] 현대백화점 우수고객</span>
-              <span class="box__list__date">
-              2021-01-30 ~ 2021-12-31 <span class="box__list__dDay strong">D-31</span>
-              </span>
-        // //진행 중 이벤트
-        // 종료된 이벤트
-        ul#eventDone.event-end.box.tab-content
-        // //종료된 이벤트
-        // paging
-        #pageNation.pagenation
-          button.pageBtn.first(onclick="fnPgUtilRead('first')", style='display: none;')
-            span.hidden &#xCC98;&#xC74C;&#xC73C;&#xB85C;
-          button.pageBtn.prev(onclick="fnPgUtilRead('prev')", style='display: none;')
-            span.hidden &#xC774;&#xC804;
-          span#pager.pagenation__number
-            span.active.paging
-              span 1
-          button.pageBtn.next(onclick="fnPgUtilRead('next')", style='display: none;')
-            span.hidden &#xB2E4;&#xC74C;
-          button.pageBtn.end(onclick="fnPgUtilRead('last')", style='display: none;')
-            span.hidden &#xB9C8;&#xC9C0;&#xB9C9;
-        // //paging
-  // 플로팅 배너
-  aside#sideBanner.side-banner(style='top: 230px;')
-    // 사이드배너
-    .side-slide-wrap
-      #sideSlide.side-slide.slick-initialized.slick-slider
-        .slick-list.draggable
-          .slick-track(style='opacity: 1; width: 490px;')
-            .slick-slide(data-slick-index='0', aria-hidden='true', style='width: 98px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
-              div
-                .side-slider__list(style='width: 100%; display: inline-block;')
-                  a(href='https://www.greating.co.kr/main/boardDetail?freeboardId=339', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
-                    img(src='./htmlfiles/A61E0F2309464765AAA8B00B7E1665FC.jpg', alt='홈 플로팅 롤링배너01')
-            .slick-slide.slick-current.slick-active(data-slick-index='1', aria-hidden='false', style='width: 98px; position: relative; left: -98px; top: 0px; z-index: 999; opacity: 1;')
-              div
-                .side-slider__list(style='width: 100%; display: inline-block;')
-                  a(href='https://www.greating.co.kr/spComn/checkAddress', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='0')
-                    img(src='./htmlfiles/EA360C4BD2664CD0ACF7EB736A6384B8.jpg', alt='홈 플로팅 롤링배너02')
-            .slick-slide(data-slick-index='2', aria-hidden='true', style='width: 98px; position: relative; left: -196px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
-              div
-                .side-slider__list(style='width: 100%; display: inline-block;')
-                  a(href='https://www.greating.co.kr/groupOrder/groupOrderMain', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
-                    img(src='./htmlfiles/305417B379654EA5929A0286535F67C7.jpg', alt='홈 플로팅 롤링배너03')
-            .slick-slide(data-slick-index='3', aria-hidden='true', style='width: 98px; position: relative; left: -294px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
-              div
-                .side-slider__list(style='width: 100%; display: inline-block;')
-                  a(href='https://www.greating.co.kr/serviceCenter/benefit', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
-                    img(src='./htmlfiles/72821B13A05F431A87F84E5D70811085.jpg', alt='홈 플로팅 롤링배너04')
-            .slick-slide(data-slick-index='4', aria-hidden='true', style='width: 98px; position: relative; left: -392px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
-              div
-                .side-slider__list(style='width: 100%; display: inline-block;')
-                  a(href='https://www.greating.co.kr/main/boardDetail?freeboardId=499', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
-                    img(src='./htmlfiles/5B0F261EA6BA408EACA9D69BE4DA2460.jpg', alt='홈 플로팅 롤링배너05')
-      button.slide-prev.slick-arrow(style='')
-      button.slide-next.slick-arrow(style='')
-    // 최근 본 상품
-    #sideMyViewItem.good-list
-      h2
-        a(href='https://www.greating.co.kr/myPage/myViewItemList') &#xCD5C;&#xADFC; &#xBCF8; &#xC0C1;&#xD488;
-      ul#sideMyViewItemList
-    span#sideBannerCustomerCenter.call-center 1800-0700
-  footer#footer.hd__footer
-    .hd__footer__inner
-      .hd__footer__left
-        ul.item
-          // <li><a href="https://hyundaigreenfood.com/po/INDEX.hgc" target="_blank">회사소개</a></li>
-          li
-            a(href='https://www.greating.co.kr/main/boardDetail?freeboardId=239') &#xD68C;&#xC0AC;&#xC18C;&#xAC1C;
-          // <li><a href="/serviceCenter/userGuide">이용안내</a></li>
-          li
-            a.winOpen(href='https://www.greating.co.kr/event/eventList#', data-url='/main/defaultCaulse?ID=1') &#xC774;&#xC6A9;&#xC57D;&#xAD00;
-          li
-            a.bold.winOpen(href='https://www.greating.co.kr/event/eventList#', data-url='/main/personalInfo?ID=2') &#xAC1C;&#xC778;&#xC815;&#xBCF4;&#xCC98;&#xB9AC;&#xBC29;&#xCE68;
-          li
-            a(href='https://www.greating.co.kr/serviceCenter/benefit') &#xBA64;&#xBC84;&#xC2ED; &#xD504;&#xB85C;&#xADF8;&#xB7A8;
-        .support
-          strong.support__title &#xACE0;&#xAC1D;&#xC13C;&#xD130;
-          span#CUSTOMER_CENTER_TEL.support__tel 1800-0700
-          p#CUSTOMER_CENTER_TIME.support__desc
-            | &#xD3C9;&#xC77C;, &#xD1A0;&#xC694;&#xC77C; 7:00~18:00
-            br
-            | &#xACF5;&#xD734;&#xC77C; 7&#xC2DC; ~ 13&#xC2DC; (&#xC77C;&#xC694;&#xC77C;
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD734;&#xBB34;)
-            br
-            |  &#xCE74;&#xCE74;&#xC624;&#xD1A1; 
-            span.point
-              a.icon-area-kakao(href='javascript:csKakao();') @&#xADF8;&#xB9AC;&#xD305;
-            |  &#xCE5C;&#xAD6C; &#xCD94;&#xAC00;&#xD558;&#xACE0; &#xC18C;&#xC2DD;&#xACFC; &#xD61C;&#xD0DD;&#xC744; &#xBC1B;&#xC544;&#xBCF4;&#xC138;&#xC694;.
-        ul.sns-box
-          li
-            a.sns-box__intagram(href='https://www.instagram.com/greating.official/') &#xC778;&#xC2A4;&#xD0C0;&#xADF8;&#xB7A8;
-          li
-            a.sns-box__youtube(href='https://www.youtube.com/channel/UClyxH287Qe5OEWxCPXRRvHg', target='_blank') &#xC720;&#xD29C;&#xBE0C;
-          li
-            a.sns-box__blog(href='https://blog.naver.com/h_greating', target='_blank') &#xBE14;&#xB85C;&#xADF8;
-          li
-            a.sns-box__kakao(href='javascript:csKakao()') &#xCE74;&#xCE74;&#xC624;&#xD1A1;
-      .hd__footer__right
-        .company
-          strong#COMPANY_NAME.company__name &#xD604;&#xB300;&#xADF8;&#xB9B0;&#xD478;&#xB4DC;
-          #COMPANY_INFO.company__info
-            | &#xB300;&#xD45C;&#xC774;&#xC0AC; : &#xBC15;&#xD64D;&#xC9C4; | &#xC0AC;&#xC5C5;&#xC7A5;&#xC18C;&#xC7AC;&#xC9C0; : &#xACBD;&#xAE30;&#xB3C4; &#xC6A9;&#xC778;&#xC2DC; &#xC218;&#xC9C0;&#xAD6C; &#xBB38;&#xC778;&#xB85C; 30(&#xB3D9;&#xCC9C;&#xB3D9;)
-            | &#xD604;&#xB300;&#xADF8;&#xB9B0;&#xD478;&#xB4DC;
-            br
-            | &#xC0AC;&#xC5C5;&#xC790;&#xB4F1;&#xB85D;&#xBC88;&#xD638; : 211-81-08241 
-            a.winOpen(href='https://www.greating.co.kr/event/eventList#', data-url='http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2118108241') [&#xC0AC;&#xC5C5;&#xC790;&#xC815;&#xBCF4;&#xD655;&#xC778;]
-            |  |
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xD1B5;&#xC2E0;&#xD310;&#xB9E4;&#xC2E0;&#xACE0;&#xBC88;&#xD638; : &#xC81C; 2011-&#xC6A9;&#xC778;&#xC218;&#xC9C0;-0268 &#xD638;
-            br
-            | &#xAC1C;&#xC778;&#xC815;&#xBCF4;&#xBCF4;&#xD638;&#xCC45;&#xC784;&#xC790; : &#xAE40;&#xD574;&#xACE4; | &#xAC1C;&#xC778;&#xC815;&#xBCF4; &#xAD00;&#xB9AC; &#xC774;&#xBA54;&#xC77C; :
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;hdgreenfood@hyundaigreenfood.com
-            br
-            | &#xD638;&#xC2A4;&#xD305; &#xC11C;&#xBE44;&#xC2A4; &#xC0AC;&#xC5C5;&#xC790; : (&#xC8FC;)&#xD604;&#xB300;&#xADF8;&#xB9B0;&#xD478;&#xB4DC;
-            br
-            p
-              | &#xADF8;&#xB9AC;&#xD305;&#xC758; &#xAC1C;&#xBCC4; &#xD310;&#xB9E4;&#xC790;&#xAC00; &#xB4F1;&#xB85D;&#xD55C; &#xC0C1;&#xD488;(&#xBE0C;&#xB79C;&#xB4DC;&#xC9C1;&#xC1A1;)&#xC5D0; &#xB300;&#xD55C; &#xAD11;&#xACE0;, &#xC0C1;&#xD488;&#xC8FC;&#xBB38;, &#xBC30;&#xC1A1;, &#xD658;&#xBD88;&#xC758; &#xC758;&#xBB34;&#xC640; &#xCC45;&#xC784;&#xC740; 
+            .slick-track(style='opacity: 1; width: 490px;')
+              .slick-slide(data-slick-index='0', aria-hidden='true', style='width: 98px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
+                div
+                  .side-slider__list(style='width: 100%; display: inline-block;')
+                    a(href='https://www.greating.co.kr/main/boardDetail?freeboardId=339', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
+                      img(src='./htmlfiles/A61E0F2309464765AAA8B00B7E1665FC.jpg', alt='홈 플로팅 롤링배너01')
+              .slick-slide.slick-current.slick-active(data-slick-index='1', aria-hidden='false', style='width: 98px; position: relative; left: -98px; top: 0px; z-index: 999; opacity: 1;')
+                div
+                  .side-slider__list(style='width: 100%; display: inline-block;')
+                    a(href='https://www.greating.co.kr/spComn/checkAddress', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='0')
+                      img(src='./htmlfiles/EA360C4BD2664CD0ACF7EB736A6384B8.jpg', alt='홈 플로팅 롤링배너02')
+              .slick-slide(data-slick-index='2', aria-hidden='true', style='width: 98px; position: relative; left: -196px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
+                div
+                  .side-slider__list(style='width: 100%; display: inline-block;')
+                    a(href='https://www.greating.co.kr/groupOrder/groupOrderMain', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
+                      img(src='./htmlfiles/305417B379654EA5929A0286535F67C7.jpg', alt='홈 플로팅 롤링배너03')
+              .slick-slide(data-slick-index='3', aria-hidden='true', style='width: 98px; position: relative; left: -294px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
+                div
+                  .side-slider__list(style='width: 100%; display: inline-block;')
+                    a(href='https://www.greating.co.kr/serviceCenter/benefit', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
+                      img(src='./htmlfiles/72821B13A05F431A87F84E5D70811085.jpg', alt='홈 플로팅 롤링배너04')
+              .slick-slide(data-slick-index='4', aria-hidden='true', style='width: 98px; position: relative; left: -392px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
+                div
+                  .side-slider__list(style='width: 100%; display: inline-block;')
+                    a(href='https://www.greating.co.kr/main/boardDetail?freeboardId=499', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
+                      img(src='./htmlfiles/5B0F261EA6BA408EACA9D69BE4DA2460.jpg', alt='홈 플로팅 롤링배너05')
+        button.slide-prev.slick-arrow(style='')
+        button.slide-next.slick-arrow(style='')
+      // 최근 본 상품
+      #sideMyViewItem.good-list
+        h2
+          a(href='https://www.greating.co.kr/myPage/myViewItemList') 최근 본 상품
+        ul#sideMyViewItemList
+      span#sideBannerCustomerCenter.call-center 1800-0700
+    footer#footer.hd__footer
+      .hd__footer__inner
+        .hd__footer__left
+          ul.item
+            // <li><a href="https://hyundaigreenfood.com/po/INDEX.hgc" target="_blank">회사소개</a></li>
+            li
+              a(href='https://www.greating.co.kr/main/boardDetail?freeboardId=239') 회사소개
+            // <li><a href="/serviceCenter/userGuide">이용안내</a></li>
+            li
+              a.winOpen(href='https://www.greating.co.kr/event/eventList#', data-url='/main/defaultCaulse?ID=1') 이용약관
+            li
+              a.bold.winOpen(href='https://www.greating.co.kr/event/eventList#', data-url='/main/personalInfo?ID=2') 개인정보처리방침
+            li
+              a(href='https://www.greating.co.kr/serviceCenter/benefit') 멤버십 프로그램
+          .support
+            strong.support__title 고객센터
+            span#CUSTOMER_CENTER_TEL.support__tel 1800-0700
+            p#CUSTOMER_CENTER_TIME.support__desc
+              | 평일, 토요일 7:00~18:00
               br
-              | &#xAC01; &#xD310;&#xB9E4;&#xC790;&#xAC00; &#xBD80;&#xB2F4;&#xD558;&#xACE0;, &#xADF8;&#xB9AC;&#xD305;&#xC740; &#xD1B5;&#xC2E0;&#xD310;&#xB9E4;
-              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xC911;&#xAC1C;&#xC790;&#xB85C;&#xC11C;&#xC758; &#xC758;&#xBB34;&#xC640; &#xCC45;&#xC784;&#xC744; &#xB2E4;&#xD569;&#xB2C8;&#xB2E4;.
-            a.winOpen(href='https://www.greating.co.kr/event/eventList#', data-url='https://pg.nicepay.co.kr/issue/IssueEscrow.jsp?Mid=hyundaig5m&CoNo=2118108241')
-              | [&#xC5D0;&#xC2A4;&#xD06C;&#xB85C;
-              | &#xC11C;&#xBE44;&#xC2A4; &#xAC00;&#xC785;&#xC0AC;&#xC2E4; &#xD655;&#xC778;]
-            br
-        em#COPYRIGHT.copyright Copyright &copy; 2020 HYUNDAI GREEN FOOD. All Rights Reserved.
-        .familySite
-          a.familySite__default &#xD604;&#xB300;&#xBC31;&#xD654;&#xC810; &#xAD00;&#xACC4;&#xC0AC;
-          .familySite__inner
-            div(style='padding: 20px 14px')
-              ul.familySite__inner__one
-                li
-                  span - &#xC1FC;&#xD551;&#xBAB0; &#xC0AC;&#xC774;&#xD2B8;
-                  ul.familySite__inner__two
-                    li
-                      a(href='http://www.hyundaihmall.com/', target='_blank', title='현대Hmall') &#xD604;&#xB300;Hmall
-                    li
-                      a(href='http://www.thehyundai.com/', target='_blank', title='더현대닷컴') &#xB354;&#xD604;&#xB300;&#xB2F7;&#xCEF4;
-                    li
-                      a(href='https://www.hddfs.com/shop/dm/main.do?ptnrChlCd=00003014', target='blank', title='현대백화점 DUTY FREE') &#xD604;&#xB300;&#xBC31;&#xD654;&#xC810; DUTY FREE
-                    li
-                      a(href='http://esuper.ehyundai.com/', target='_blank', title='E수퍼마켓') E&#xC218;&#xD37C;&#xB9C8;&#xCF13;
-                    li
-                      a(href='http://www.thehandsome.com/', target='_blank', title='더한섬') &#xB354;&#xD55C;&#xC12C;
-                    li
-                      a(href='http://mall.hyundailivart.co.kr/', target='_blank', title='현대리바트몰') &#xD604;&#xB300;&#xB9AC;&#xBC14;&#xD2B8;&#xBAB0;
-                    li
-                      a(href='http://www.hyundairentalcare.co.kr/', target='_blank', title='현대렌탈케어') &#xD604;&#xB300;&#xB80C;&#xD0C8;&#xCF00;&#xC5B4;
-                    li
-                      a(href='http://www.hfashionmall.com/', target='_blank', title='H패션몰') H&#xD328;&#xC158;&#xBAB0;
-                    li
-                      a(href='https://www.h-vrstation.com/main', target='blank', title='VR STATION') VR STATION
-                li
-                  span - &#xAD00;&#xACC4;&#xC0AC; &#xC0AC;&#xC774;&#xD2B8;
-                  ul.familySite__inner__two
-                    li
-                      a(href='http://www.ehyundai.com/newPortal/ir', target='blank', title='현대백화점 그룹') &#xD604;&#xB300;&#xBC31;&#xD654;&#xC810; &#xADF8;&#xB8F9;
-                    li
-                      a(href='http://www.ehyundai.com/', target='blank', title='현대백화점') &#xD604;&#xB300;&#xBC31;&#xD654;&#xC810;
-                    li
-                      a(href='http://www.hyundaihmall.com/', target='_blank', title='현대홈쇼핑') &#xD604;&#xB300;&#xD648;&#xC1FC;&#xD551;
-                    li
-                      a(href='http://www.hyundaigreenfood.com/', target='blank', title='현대그린푸드') &#xD604;&#xB300;&#xADF8;&#xB9B0;&#xD478;&#xB4DC;
-                    li
-                      a(href='http://www.thehansome.com/', target='blank', title='한섬') &#xD55C;&#xC12C;
-                    li
-                      a(href='http://www.hyundailivart.co.kr/', target='blank', title='현대리바트') &#xD604;&#xB300;&#xB9AC;&#xBC14;&#xD2B8;
-                    li
-                      a(href='http://www.hyundaihns.com/', target='blank', title='현대H&S') &#xD604;&#xB300;H&amp;S
-                    li
-                      a(href='http://www.hcn.co.kr/', target='blank', title='현대HCN') &#xD604;&#xB300;HCN
-                    li
-                      a(href='http://www.hyundaimedia.com/', target='blank', title='현대미디어') &#xD604;&#xB300;&#xBBF8;&#xB514;&#xC5B4;
-                    li
-                      a(href='http://www.hyundairentalcare.co.kr/', target='blank', title='현대렌탈케어') &#xD604;&#xB300;&#xB80C;&#xD0C8;&#xCF00;&#xC5B4;
-                    li
-                      a(href='http://www.hyundaidreamtour.com/', target='blank', title='현대드림투어') &#xD604;&#xB300;&#xB4DC;&#xB9BC;&#xD22C;&#xC5B4;
-                    li
-                      a(href='http://www.everdigm.com/', target='blank', title='에버다임') &#xC5D0;&#xBC84;&#xB2E4;&#xC784;
-                    li
-                      a(href='http://www.cnsfoodsystem.co.kr/', target='blank', title='씨엔에스푸드시스템') &#xC528;&#xC5D4;&#xC5D0;&#xC2A4;&#xD478;&#xB4DC;&#xC2DC;&#xC2A4;&#xD15C;
-                    li
-                      a(href='http://www.hyundaicatering.co.kr/', target='blank', title='현대캐터링시스템') &#xD604;&#xB300;&#xCE90;&#xD130;&#xB9C1;&#xC2DC;&#xC2A4;&#xD15C;
-                    li
-                      a(href='http://www.hyundai-ite.com/', target='blank', title='현대IT&E') &#xD604;&#xB300;IT&amp;E
-                    li
-                      a(href='http://www.hyundailncmall.com/', target='blank', title='현대L&C') &#xD604;&#xB300;L&amp;C
-                    li
-                      a(href='https://www.hddfs.com/', target='blank', title='현대백화점면세점') &#xD604;&#xB300;&#xBC31;&#xD654;&#xC810;&#xBA74;&#xC138;&#xC810;
-                    li
-                      a(href='https://www.hyundaifuturenet.co.kr/', target='blank', title='현대퓨처넷') &#xD604;&#xB300;&#xD4E8;&#xCC98;&#xB137;
-    script(src='./htmlfiles/kakao.min.js')
-    script.
-      //카카오톡 cs문의
-      function csKakao() {
-      Kakao.cleanup();
-      Kakao.init(SS_KAKAO_ID);
-      Kakao.PlusFriend.chat({
-      plusFriendId: '_xjuhtT'
-      });
-      }
-  // intro popup
-  script#dvdpPopupTemplate(type='text/x-handlebars-template').
-    <article class="intro-popup" id="dpPopup_{{DP_POPUP_ID}}">
-    <div class="popup-cont">{{{HELPER_HTML DESC_HTML}}}</div>
-    <span class="popup-btm btn">
-    {{#if TODAYYN}}
-    <a href="javascript:closeDpPopup(this, '{{DP_POPUP_ID}}');" class="btn-init green today-none">오늘 하루 보지 않기</a>
-    {{/if}}
-    <a href="javascript:closePopup(this, '{{DP_POPUP_ID}}');" class="close btn-init grey">닫기</a>
-    </span>
-    </article>
-  // 오늘 하루 보지 않기
-  #dvdpPopupArea(style='position: absolute; top: 40px; width: 100%; height: auto;')
-  a.hd__top(href='https://www.greating.co.kr/event/eventList#')
-    span.hidden &#xC0C1;&#xB2E8;&#xC73C;&#xB85C; &#xBC14;&#xB85C;&#xAC00;&#xAE30;
-  script(src='./htmlfiles/footerController.js')
-// 공통 alert
-#alert-layer.pop_wrap
-  script#dvAlertLayerTemplate(type='text/x-handlebars-template').
-    <div class="pop_wrap__inner">
-    <h2 class="pop_header hidden">alert</h2>
-    <div class="pop_content">
-    <div class="text">
-    {{{MSG}}}
-    </div>
-    </div>
-    <div class="btn_area btn alert">
-    <button type="button" class="btn-init green" id="dvAlertOk">확인</button>
-    </div>
-    </div>
-// // 공통 alert
-// 공통 confirm
-#confirm-layer.pop_wrap
-  script#dvConfirmLayerTemplate(type='text/x-handlebars-template').
-    <div class="pop_wrap__inner">
-    <h2 class="pop_header hidden">confirm</h2>
-    <div class="pop_content">
-    <div class="text">
-    {{{MSG}}}
-    </div>
-    <button type="button" class="btn_close btn--delete" style="visibility:hidden;"></button>
-    </div>
-    <div class="btn_area btn confirm">
-    <button type="button" class="btn-init white" id="dvConfirmCancel">취소</button>
-    <button type="button" class="btn-init green" id="dvConfirmOk">확인</button>
-    </div>
-    </div>
-// // 공통 confirm
-.mask
-// 앱설치QR코드 Alert
-#qr-alert-layer.pop_wrap.alert-layer(style='z-index: 10000;')
-  .pop_wrap__inner
-    h2.pop_header.hidden &#xC571; &#xC124;&#xCE58; &#xC548;&#xB0B4;
-    .pop_content
-      .text
-        | &#xC571;&#xC5D0;&#xC11C;&#xB9CC; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC11C;&#xBE44;&#xC2A4;&#xC785;&#xB2C8;&#xB2E4;.
-        br
-        | &#xADF8;&#xB9AC;&#xD305; &#xC571;&#xC744; &#xC124;&#xCE58;&#xD558;&#xACE0; &#xB354; &#xAC04;&#xD3B8;&#xD558;&#xAC8C; &#xAC74;&#xAC15;&#xC744; &#xCC59;&#xACA8;&#xBCF4;&#xC138;&#xC694;!
-      .img
-        img(src='./htmlfiles/img_appQR.jpg', alt='')
-    .btn_area.btn.alert
-      button#dvAlertOk.btn-init.green(type='button') &#xD655;&#xC778;
-// 모바일 구독 앱설치QR코드 Alert
-#subscribe-qr-alert-layer.pop_wrap.alert-layer(style='z-index: 10000;')
-  .pop_wrap__inner
-    h2.pop_header.hidden &#xC571; &#xC124;&#xCE58; &#xC548;&#xB0B4;
-    .pop_content
-      .text
-        | &#xBAA8;&#xBC14;&#xC77C;&#xC5D0;&#xC11C;&#xB9CC; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC11C;&#xBE44;&#xC2A4;&#xC785;&#xB2C8;&#xB2E4;.
-        br
-        | &#xADF8;&#xB9AC;&#xD305; &#xC571;&#xC744; &#xC124;&#xCE58;&#xD558;&#xACE0; &#xB354; &#xAC04;&#xD3B8;&#xD558;&#xAC8C; &#xAC74;&#xAC15;&#xC744; &#xCC59;&#xACA8;&#xBCF4;&#xC138;&#xC694;!
-      .img
-        img(src='./htmlfiles/img_appQR.jpg', alt='')
-    .btn_area.btn.alert
-      button#dvAlertOk.btn-init.green(type='button') &#xD655;&#xC778;
+              | 공휴일 7시 ~ 13시 (일요일
+              | 휴무)
+              br
+              | 카카오톡 
+              span.point
+                a.icon-area-kakao(href='javascript:csKakao();') @그리팅
+              | 친구 추가하고 소식과 혜택을 받아보세요.
+          ul.sns-box
+            li
+              a.sns-box__intagram(href='https://www.instagram.com/greating.official/') 인스타그램
+            li
+              a.sns-box__youtube(href='https://www.youtube.com/channel/UClyxH287Qe5OEWxCPXRRvHg', target='_blank') 유튜브
+            li
+              a.sns-box__blog(href='https://blog.naver.com/h_greating', target='_blank') 블로그
+            li
+              a.sns-box__kakao(href='javascript:csKakao()') 카카오톡
+        .hd__footer__right
+          .company
+            strong#COMPANY_NAME.company__name 현대그린푸드
+            #COMPANY_INFO.company__info
+              | 대표이사 : 박홍진 | 사업장소재지 : 경기도 용인시 수지구 문인로 30(동천동))
+              | 현대그린푸드
+              br
+              | 사업자등록번호 : 211-81-08241 
+              a.winOpen(href='https://www.greating.co.kr/event/eventList#', data-url='http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2118108241') [사업자정보확인]
+              |  |
+              | 통신판매신고번호 : 제 2011-용인수지-0268 호
+              br
+              | 개인정보보호책임자 : 김해곤 | 
+              | 개인정보 관리 이메일 : hdgreenfood@hyundaigreenfood.com
+              br
+              | 호스팅 서비스 사업자 : (주)현대그린푸드
+              br
+              p
+                | 그리팅의 개별 판매자가 등록한 상품(브랜드직송)에 대한 광고, 상품주문, 배송, 환불의 의무와 책임은 
+                br
+                | 각 판매자가 부담하고, 그리팅은 통신판매
+                | 중개자로서의 의무와 책임을 다합니다.
+              a.winOpen(href='https://www.greating.co.kr/event/eventList#', data-url='https://pg.nicepay.co.kr/issue/IssueEscrow.jsp?Mid=hyundaig5m&CoNo=2118108241')
+                | [에스크로
+                | 서비스 가입사실 확인]
+              br
+
+          em#COPYRIGHT.copyright Copyright &copy; 2020 HYUNDAI GREEN FOOD. All Rights Reserved.
+  //-   // intro popup
+  //-   script#dvdpPopupTemplate(type='text/x-handlebars-template').
+  //-     <article class="intro-popup" id="dpPopup_{{DP_POPUP_ID}}">
+  //-     <div class="popup-cont">{{{HELPER_HTML DESC_HTML}}}</div>
+  //-     <span class="popup-btm btn">
+  //-     {{#if TODAYYN}}
+  //-     <a href="javascript:closeDpPopup(this, '{{DP_POPUP_ID}}');" class="btn-init green today-none">오늘 하루 보지 않기</a>
+  //-     {{/if}}
+  //-     <a href="javascript:closePopup(this, '{{DP_POPUP_ID}}');" class="close btn-init grey">닫기</a>
+  //-     </span>
+  //-     </article>
+  //-   // 오늘 하루 보지 않기
+  //-   #dvdpPopupArea(style='position: absolute; top: 40px; width: 100%; height: auto;')
+  //-   a.hd__top(href='https://www.greating.co.kr/event/eventList#')
+  //-     span.hidden 상단으로 바로가기
+  //-   script(src='./htmlfiles/footerController.js')
+  //- // 공통 alert
+  //- #alert-layer.pop_wrap
+  //-   script#dvAlertLayerTemplate(type='text/x-handlebars-template').
+  //-     <div class="pop_wrap__inner">
+  //-     <h2 class="pop_header hidden">alert</h2>
+  //-     <div class="pop_content">
+  //-     <div class="text">
+  //-     {{{MSG}}}
+  //-     </div>
+  //-     </div>
+  //-     <div class="btn_area btn alert">
+  //-     <button type="button" class="btn-init green" id="dvAlertOk">확인</button>
+  //-     </div>
+  //-     </div>
+  //- // // 공통 alert
+  //- // 공통 confirm
+  //- #confirm-layer.pop_wrap
+  //-   script#dvConfirmLayerTemplate(type='text/x-handlebars-template').
+  //-     <div class="pop_wrap__inner">
+  //-     <h2 class="pop_header hidden">confirm</h2>
+  //-     <div class="pop_content">
+  //-     <div class="text">
+  //-     {{{MSG}}}
+  //-     </div>
+  //-     <button type="button" class="btn_close btn--delete" style="visibility:hidden;"></button>
+  //-     </div>
+  //-     <div class="btn_area btn confirm">
+  //-     <button type="button" class="btn-init white" id="dvConfirmCancel">취소</button>
+  //-     <button type="button" class="btn-init green" id="dvConfirmOk">확인</button>
+  //-     </div>
+  //-     </div>
+
 // 개발팀 공통 js include 시작
 script(src='./htmlfiles/library.js')
 script(src='./htmlfiles/7HPSEX5C.js')

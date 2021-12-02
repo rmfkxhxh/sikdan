@@ -150,13 +150,13 @@ var pageController = function(){
 	
 	this.fnDraw = function(){
 		var drawStr ='';
-    	drawStr+='<button class="pageBtn first" onclick="fnPgUtilRead('+"'first'"+')"><span class="hidden">처음으로</span></button>';
-		drawStr+='<button class="pageBtn prev" onclick="fnPgUtilRead('+"'prev'"+')"><span class="hidden">이전</span></button>';
+    	drawStr+='<button class="pageBtn_first" onclick="fnPgUtilRead('+"'first'"+')"><span class="hidden">처음으로</span></button>';
+		drawStr+='<button class="pageBtn_prev" onclick="fnPgUtilRead('+"'prev'"+')"><span class="hidden">이전</span></button>';
 		drawStr+='<span class="pagenation__number" id="pager">';
 		
 		drawStr+='</span>';
-		drawStr+='<button class="pageBtn next" onclick="fnPgUtilRead('+"'next'"+')"><span class="hidden">다음</span></button>';
-		drawStr+='<button class="pageBtn end" onclick="fnPgUtilRead('+"'last'"+')"><span class="hidden">마지막</span></button>';
+		drawStr+='<button class="pageBtn_next" onclick="fnPgUtilRead('+"'next'"+')"><span class="hidden">다음</span></button>';
+		drawStr+='<button class="pageBtn_end" onclick="fnPgUtilRead('+"'last'"+')"><span class="hidden">마지막</span></button>';
 		$('#pageNation').html(drawStr);
 	};
 	
