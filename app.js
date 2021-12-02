@@ -6,6 +6,7 @@ const bodyParser = require("body-parser")
 const session = require("express-session")
 const dotenv = require("dotenv").config();
 app.use(express.static('./views'))
+app.use(express.static('./views/common'))
 app.use(express.static('./static'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -32,14 +33,14 @@ const host = '127.0.0.1'
 app.get('/', (req, res) => {
     if(req.session.user !== undefined) {
         console.log(req.session.user)
-        res.render('event', {breadcrumbs: ['HOME', '이벤트', '진행중 이벤트']})
+        res.render('event', {breadcrumbList: ['HOME', '이벤트', '진행중 이벤트']})
     }
     else {
-        res.render('head', {breadcrumbs: ['HOME']})
+        res.render('display', {breadcrumbList: ['HOME']})
     }
 })
 app.get('/login', (req, res) => {
-    res.render('login', {breadcrumbs: ['Login']})
+    res.render('login', {breadcrumbList: ['Login']})
 })
 app.post('/login', (req, res) => {
     console.log('req:', req.body)
@@ -48,15 +49,18 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/display', (req, res) => {
-    res.render('display', {breadcrumbs: ['HOME', '기획전']})
+    res.render('display', {breadcrumbList: ['HOME', '기획전']})
 })
 
 app.get('/event', (req, res) => {
-    res.render('event', {breadcrumbs: ['HOME', '이벤트', '진행중 이벤트']})
+    res.render('event', {breadcrumbList: ['HOME', '이벤트', '진행중 이벤트']})
+})
+app.get('/coupon', (req, res) => {
+    res.render('coupon', {breadcrumbList: ['HOME', '쿠폰/교환권']})
 })
 
 app.get('/h', (req, res) => {
-    res.render('head', {breadcrumbs: ['HOME', '케어식단']})
+    res.render('head', {breadcrumbList: ['HOME', '케어식단']})
 })
 
 // app.get('/information', (req, res) => {

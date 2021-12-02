@@ -1,7 +1,7 @@
 doctype html
 head
   meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-  include ./head.pug
+  include ./common/head.pug
   
   body#eventList.hd
     main#contents.hd__eventList
@@ -19,50 +19,50 @@ head
             li.box__list
               a(href='javascript:void(0);', onclick='fnBanner(1,6078);')
                 figure.box__list__thumb
-                  img(src='./img/event/novbuyevent.jpg', alt='11월 구매 사은품 이벤트 ★')
+                  img(src='./src/event/novbuyevent.jpg', alt='11월 구매 사은품 이벤트 ★')
   
             li.box__list
               a(href='javascript:void(0);', onclick='fnBanner(1,6058);')
                 figure.box__list__thumb
-                  img(src='./img/event/novsignevent.jpg', alt='[11월 이벤트]신규가입하면 그리팅 인기상품이 990원')
+                  img(src='./src/event/novsignevent.jpg', alt='[11월 이벤트]신규가입하면 그리팅 인기상품이 990원')
               
             li.box__list
               a(href='javascript:void(0);', onclick='fnBanner(1,6018);')
                 figure.box__list__thumb
-                  img(src='./img/event/pushdownevent.jpg', alt='(11월) 앱 푸시 알림 동의+ 앱 다운로드 이벤트')
+                  img(src='./src/event/pushdownevent.jpg', alt='(11월) 앱 푸시 알림 동의+ 앱 다운로드 이벤트')
             
                 </span>
             li.box__list
               a(href='javascript:void(0);', onclick='fnBanner(1,6098);')
                 figure.box__list__thumb
-                  img(src='./img/event/hyundaimevent.jpg', alt='그리팅 x 현대카드 M포인트 제휴 혜택')
+                  img(src='./src/event/hyundaimevent.jpg', alt='그리팅 x 현대카드 M포인트 제휴 혜택')
             li.box__list
               a(href='javascript:void(0);', onclick='fnBanner(1,6038);')
                 figure.box__list__thumb
-                  img(src='./img/event/kakaoevent.jpg', alt='그리팅 카톡 채널 추가하고 최대 3만원 쿠폰 받자')
+                  img(src='./src/event/kakaoevent.jpg', alt='그리팅 카톡 채널 추가하고 최대 3만원 쿠폰 받자')
             li.box__list
               a(href='javascript:void(0);', onclick='fnBanner(1,5860);')
                 figure.box__list__thumb
-                  img(src='./img/event/shinhanevent.jpg', alt='신한카드 제휴 할인 이벤트')
+                  img(src='./src/event/shinhanevent.jpg', alt='신한카드 제휴 할인 이벤트')
             li.box__list
               a(href='javascript:void(0);', onclick='fnBanner(1,5859);')
                 figure.box__list__thumb
-                  img(src='./img/event/samsungevent.jpg', alt='삼성카드 LINK 제휴 할인 이벤트')
+                  img(src='./src/event/samsungevent.jpg', alt='삼성카드 LINK 제휴 할인 이벤트')
             li.box__list
               a(href='javascript:void(0);', onclick='fnBanner(1,3878);')
                 figure.box__list__thumb
-                  img(src='./img/event/maysignevent.jpg', alt='(5월~) 2021 그리팅 신규가입 혜택 안내')
+                  img(src='./src/event/maysignevent.jpg', alt='(5월~) 2021 그리팅 신규가입 혜택 안내')
             li.box__list
               a(href='javascript:void(0);', onclick='fnBanner(1,2998);')
                 figure.box__list__thumb
-                  img(src='./img/event/hyundaivipevent.jpg', alt='[제휴혜택] 현대백화점 우수고객')
+                  img(src='./src/event/hyundaivipevent.jpg', alt='[제휴혜택] 현대백화점 우수고객')
           // //진행 중 이벤트
           // 종료된 이벤트
           ul#eventDone.event-end.box.tab-content
             li.box__list
               a(href='javascript:void(0);', onclick='fnBanner(1,2998);')
                 figure.box__list__thumb
-                  img(src='./img/event/hyundaivipevent.jpg', alt='[제휴혜택] 현대백화점 우수고객')
+                  img(src='./src/event/hyundaivipevent.jpg', alt='[제휴혜택] 현대백화점 우수고객')
           // //종료된 이벤트
           // paging
           #pageNation.pagenation
@@ -89,27 +89,27 @@ head
                 div
                   .side-slider__list(style='width: 100%; display: inline-block;')
                     a(href='https://www.greating.co.kr/main/boardDetail?freeboardId=339', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
-                      img(src='./img/event/rollingbanner1.jpg', alt='홈 플로팅 롤링배너01')
+                      img(src='./src/event/rollingbanner1.jpg', alt='홈 플로팅 롤링배너01')
               .slick-slide.slick-current.slick-active(data-slick-index='1', aria-hidden='false', style='width: 98px; position: relative; left: -98px; top: 0px; z-index: 999; opacity: 1;')
                 div
                   .side-slider__list(style='width: 100%; display: inline-block;')
                     a(href='https://www.greating.co.kr/spComn/checkAddress', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='0')
-                      img(src='./img/event/rollingbanner2.jpg', alt='홈 플로팅 롤링배너02')
+                      img(src='./src/event/rollingbanner2.jpg', alt='홈 플로팅 롤링배너02')
               .slick-slide(data-slick-index='2', aria-hidden='true', style='width: 98px; position: relative; left: -196px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
                 div
                   .side-slider__list(style='width: 100%; display: inline-block;')
                     a(href='https://www.greating.co.kr/groupOrder/groupOrderMain', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
-                      img(src='./img/event/rollingbanner3.jpg', alt='홈 플로팅 롤링배너03')
+                      img(src='./src/event/rollingbanner3.jpg', alt='홈 플로팅 롤링배너03')
               .slick-slide(data-slick-index='3', aria-hidden='true', style='width: 98px; position: relative; left: -294px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
                 div
                   .side-slider__list(style='width: 100%; display: inline-block;')
                     a(href='https://www.greating.co.kr/serviceCenter/benefit', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
-                      img(src='./img/event/rollingbanner4.jpg', alt='홈 플로팅 롤링배너04')
+                      img(src='./src/event/rollingbanner4.jpg', alt='홈 플로팅 롤링배너04')
               .slick-slide(data-slick-index='4', aria-hidden='true', style='width: 98px; position: relative; left: -392px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms linear 0s;', tabindex='-1')
                 div
                   .side-slider__list(style='width: 100%; display: inline-block;')
                     a(href='https://www.greating.co.kr/main/boardDetail?freeboardId=499', style='position:static; width: auto; margin-left:0; cursor:pointer;', tabindex='-1')
-                      img(src='./img/event/5B0F261EA6BA408EACA9D69BE4DA2460.jpg', alt='홈 플로팅 롤링배너05')
+                      img(src='./src/event/5B0F261EA6BA408EACA9D69BE4DA2460.jpg', alt='홈 플로팅 롤링배너05')
         button.slide-prev.slick-arrow(style='')
         button.slide-next.slick-arrow(style='')
       // 최근 본 상품
