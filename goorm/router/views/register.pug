@@ -1,0 +1,40 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title register
+form(action='')
+  h2 &#xD68C;&#xC6D0;&#xAC00;&#xC785;
+  |         name: 
+  input(type='text' name='name')
+  |         pw: 
+  input(type='password' name='pw')
+button.ajaxsend submit
+a(href='/')
+  button home
+.result
+script.
+  document.querySelector('.ajaxsend').addEventListenner('click', function(){
+  var name = document.forms[0].elements[0].value;
+  var pw = document.forms[0].elements[1].value;
+  var inputdata={'name':name,'pw':pw}
+  ajax_send('http://localhost:3000/register',inputdata)
+  //fail이든 ok든 응답은 서버츠측에서 보낼때 stringfy시켜 보내기 때문에,
+  function ajax_send(url,inputdata)
+  var data=JSON.stringify(inputdata)
+  var xhr= new XMLHttpRequest()
+  xhr.open('POST',url)
+  xhr.setRequestHeader('Content-type','application/json')
+  xhr.send(data)
+  //다시 json형식으로 xhr.responseText를 복구 시켜주고,
+  //안에 들어있는 내용에따라 출력을 달리해준다.
+  xhr.addEventListener('load', function() {
+  var result=JSON.parse(xhr.responseText)
+  if(result.result ==='fail'){
+  document.querySelector('.result').innerHTML= '동일한 name의 사용자가 이미 존재합니다.'
+  }else{
+  document.querySelector('.result').innerHTML='회원가입에 성공하였습니다'
+  }
+  })
+  })
