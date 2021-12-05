@@ -27,7 +27,7 @@ var Users = [];
 app.set('view engine', 'pug');
 app.set("views", './views');
 
-const port = 4000
+const port = 5500
 const host = '127.0.0.1'
 
 app.get('/', (req, res) => {
