@@ -5,27 +5,34 @@ head
  
   meta(http-equiv='X-UA-Compatible', content='IE=edge')
   link(rel='shortcut icon', href='./front_mo/images/favicon.png')
-  link(rel='stylesheet', href='./css/main.css', type='text/css')
-  script(src='/js/main.js')
+  link(rel='stylesheet', href='../css/main.css', type='text/css')
+  script(src='../js/main.js')
 
 #wrap
   header#header.hd__header
     .topBanner
       a(href='./event/eventReview?evEventId=3878#page1')
         figure
-          img(src='./src/head/2FF579614D9B4DD6830B0C0788865BE2.jpg', alt='1')
+          img(src='../src/head/2FF579614D9B4DD6830B0C0788865BE2.jpg', alt='1')
       a.topBanner__close(href='javascript:closeTopBanner();')
-        img(src='./src/head/btn_topBanner-close.png', alt='닫기')
+        img(src='../src/head/btn_topBanner-close.png', alt='닫기')
     .header
       section.user-area
         ul.user-area__menu
-          // 로그인전
+          // 로그인처리
+          if sessionValid
+            a(style=("font-size:14px")) #{userId}님 안녕하세요
+              li
+                a(href='/member' style=("font-size:14px")) 마이페이지
+              li
+                a(href='/logout' style=("font-size:14px")) 로그아웃
+          else
+            li
+              a(href='/login') 로그인
+            li
+              a(href='/signup') 회원가입
           li
-            a(href='javascript:fnLogin();') 로그인
-          li
-            a(href='./member/join/memberjoin') 회원가입
-          li
-            a(href='./myPage/randomCouponRegist') 쿠폰/교환권
+            a(href='./coupon') 쿠폰/교환권
           li
             a(href='./serviceCenter/serviceCenterMain')
               |고객센터
@@ -35,14 +42,14 @@ head
                 a(href='./serviceCenter/notice') 공지사항
               li
                 a(href='./serviceCenter/faq') 자주하는 질문
-                a(href='./serviceCenter/myPersonalInquery') 1:1 문의
+                a(href='./post') 1:1 문의
               li
                 a(href='./serviceCenter/qna') 고객의 소리
       .header__inner
         .header__sec
           h1.logo
-            a(href='https://nodepj2.run.goorm.io/')
-              img(src='./src/logo-removebg-preview.png', alt='mealkit' , width="250", height=140)
+            a(href='/')
+              img(src='../src/logo-removebg-preview.png', alt='mealkit' , width="250", height=140)
           .all
             a(href='./event/eventList#')
               span.all__icon
@@ -217,24 +224,24 @@ head
           .gnb
             ul.gnb__inner
               li.gnb__list
-                a.gnb__list-name(href='./planMeals/planMeals') 케어식단
+                a.gnb__list-name(href='#') 케어식단
+              //- li.gnb__list
+                a.gnb__list-name(href='#') 건강마켓
               li.gnb__list
-                a.gnb__list-name(href='./market/marketList?ctgryId=50') 건강마켓
+                a.gnb__list-name(href='./display') 기획전
               li.gnb__list
-                a.gnb__list-name(href='./display/displayList') 기획전
+                a.gnb__list-name(href='./event') 이벤트
               li.gnb__list
-                a.gnb__list-name(href='./event/eventList') 이벤트
-              li.gnb__list
-                a.gnb__list-name(href='./story/storyMain') 스토리
+                a.gnb__list-name(href='./story') 스토리
           nav.direct
             #searchPopup.direct__search.btn__modal-open(data-login='y', data-popup-name='popup_search')
               // 2021.09.23 YSC 상품권 내리기 <input type="text" id="searchInput2" class="search-input" placeholder="그리팅 '기프트 카드' 출시!" autocomplete="off">
               input#searchInput2.search-input(type='text', placeholder='검색어를 입력해 주세요.', autocomplete='off')
               a(href='#')
-                img#dvSrhFilterBtn2(src='./src/head/icon_header_search.png', alt='검색')
+                img#dvSrhFilterBtn2(src='../src/head/icon_header_search.png', alt='검색')
             a.direct__cart(href='./order/orderCart')
               span#cartCnt 0
-              img(src='./src/head/icon_header_cart.png', alt='장바구니')
+              img(src='../src/head/icon_header_cart.png', alt='장바구니')
   main#contents.hd__eventList
     ul.breadcrumb
       each val in breadcrumbList

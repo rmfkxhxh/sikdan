@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="de_term">
+        <!-- <button id =dvM_1 class = hidden  name='monthRadio' onclick="dateSub(1)"> 1개월</button>
+        <button id =dvM_1 class = hidden name='monthRadio' onclick="dateSub(3)"> 3개월</button>
+        <button id =dvM_1 class = hidden  name='monthRadio' onclick="dateSub(6)"> 6개월</button> -->
+        <button id =dvM_1 class = hidden  name='monthRadio' onclick="addMonths(new Date(), -1)"> 1개월</button>
+        <button id =dvM_1 class = hidden  name='monthRadio' onclick="addMonths(new Date(), -3)"> 3개월</button>
+        <button id =dvM_1 class = hidden  name='monthRadio' onclick="addMonths(new Date(), -6)"> 6개월</button>
+        <br> &nbsp&nbsp 
+        <input type="text" onclick="inputDate(this);" id="text1" name="text1"/> &nbsp&nbsp~ &nbsp&nbsp
+        <!--  <button type="button" class="calendar" onclick="inputDate(this);"> <span>달력 </span> </button> -->
+            <input type="text" onclick="inputDate(this);" id="text2"/>
+        <!--  <button type="button" class="calendar" onclick="inputDate(this);"> <span>달력 </span> </button> -->
+            <button type="button" class="view" onclick="submitDate()"><span>조회 </span></button>
+
+    <!-- <div id="datenow"> -->
+        <input type="text" id="datenow"/>
+        
+    </div>
+    </div>
+    <script>
+        function addMonths(date, months) {
+        
+        var temp = String(date.getFullYear()+ '-' + date.getMonth() + '-' + date.getDate());
+        document.getElementById("text2").value = temp;
+        date.setMonth(date.getMonth() + months);
+        var temp1 = String(date.getFullYear()+ '-' + date.getMonth() + '-' + date.getDate());
+        document.getElementById("text1").value = temp1;
+        var temp2 = parseInt(Date.now())
+        document.getElementById("datenow").value = date = new Date(temp2).toLocaleDateString("ko-KO");
+        console.log(typeof(temp2))
+        // return date;
+        }
+        // document.getElementById("datenow").value = Date.now()
+        
+    </script>
+</body>
+<!-- </html>
+
+<style>
+    /* single-row column design */
+    tr { display: block; float: left; }
+    th, td { display: block; border: 1px solid black; }
+
+    /* border-collapse */
+    tr>*:not(:first-child) { border-top: 0; }
+    tr:not(:first-child)>* { border-left:0; }
+</style>
+<body>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>number</th>
+        </tr>
+        <tr>
+            <td>James Bond</td>
+            <td>007</td>
+        </tr>
+        <tr>
+            <td>Lucipher</td>
+            <td>666</td>
+        </tr>
+        </table>
+    </div> -->

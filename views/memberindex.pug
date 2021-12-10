@@ -1,0 +1,71 @@
+doctype html
+// 세션 세팅
+head
+// //head include
+include ./common/head.pug
+body.hd#myOrderList
+#wrap
+  main#contents.hd__myOrderList
+    .myOrderList.myPage
+      h2.hd__page-title 마이페이지
+      .sub-wrap.hd__inner1100
+        // snb
+        aside.snb
+          h3.hidden 서브메뉴
+          include ./common/submenu.pug
+        //컨텐츠
+        .sub-cont.orderView
+          section.sub-cont__sec.myWelcome(style="display:inline-flex; width:850px; align-items:center; justify-content: center;")
+            h3.myWelcome__info
+              span.myWelcome__info__name
+                em #{userId}
+                | 님 반갑습니다.
+          section 
+            each value, key in user
+              if (key == "No" || key == "Pwd") 
+                span 
+              else if (key == "Id")
+                span 아이디 : #{value} <br>
+              else if (key == "Name")
+                span 이름 : #{value} <br>
+              else if (key == "Gender")
+                span 성별 : #{value} <br>
+              else if (key == "Addr")
+                span 주소 : #{value.split('/')[1]}, #{value.split('/')[2]}<br>
+              else if (key == "Phone")
+                span 전화번호 : #{value.slice(0,3)}-#{value.slice(3,7)}-#{value.slice(7)} <br>
+              else if (key == "Birthdate")
+                span 생년월일 : #{value.split('-')[0]}년 #{value.split('-')[1]}월 #{value.split('-')[2]}일<br>
+              else if (key == "RegDate")
+                span 가입일자 : #{new Date(parseInt(value)).toLocaleDateString("ko-KO")}<br>
+              else if (key == "Cart")
+                if (value == null)
+                  span 장바구니 : 장바구니가 비어있습니돠. &nbsp;상품을 담아주세여.<br>
+                else
+                  span 장바구니 : 
+                    a(href="./cart") 장바구니로 이동하기<br>
+              else if (key == "Orders")
+                if (value == null)
+                  span 주문내역 : 주문내역이 없습니돠. &nbsp;상품을 구매 해주세여.<br>
+                else
+                  span 주문내역 : 
+                    a(href="./myOrderList") 주문내역으로 이동하기<br>
+              else if (key == "Coupon")
+                if (value == null)
+                  span 쿠폰 : 쿠폰이 없습니돠.
+                  a(href="/coupon") &nbsp;쿠폰 등록을 해주세여.<br>
+                else
+                  span 쿠폰 : 
+                    a(href="/coupon") 쿠폰함으로 이동하기<br>
+              else if (key == "Wishlist")
+                if (value == null)
+                  span 관심상품 : 관심상품으로 등록된 상품이 없습니돠.<br>
+                else
+                  span 관심상품 : 
+                    a(href="./myFavorate") 관심상품으로 이동하기<br>
+              else 
+                span #{key}: #{value} <br>
+            //- p= JSON.stringify(user)
+            
+  
+

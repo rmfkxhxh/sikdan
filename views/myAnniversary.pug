@@ -1,0 +1,275 @@
+doctype html
+// 세션 세팅
+head
+body.hd#myAnniversary
+  #wrap
+    header#header.hd__header
+      .header
+        section.user-area
+          ul.user-area__menu
+            li
+              a(href='#')
+                strong  박승재
+                | 님
+                i
+              ul
+                li
+                  a(href='/myPage/myOrderList') 주문/배송 조회
+                li
+                  a(href='/myPage/myCoupon') 나의 쿠폰
+                li
+                  a(href='/myPage/myPoint') 나의 포인트
+                li
+                  a(href='/myPage/myFavorate') 관심상품
+                li
+                  a(href='/myPage/myPageMain') 마이페이지
+                li
+                  a(href='javascript:fnLogout();') 로그아웃
+            li
+              a(href='/myPage/randomCouponRegist') 쿠폰/교환권
+            li
+              a(href='/serviceCenter/serviceCenterMain')
+                | 고객센터 
+                i
+              ul
+                li
+                  a(href='/serviceCenter/notice') 공지사항
+                li
+                  a(href='/serviceCenter/faq') 자주하는 질문
+                li
+                  a(href='/serviceCenter/myPersonalInquery') 1:1 문의
+                li
+                  a(href='/serviceCenter/qna') 고객의 소리
+        .header__inner
+          .header__sec
+            h1.logo
+              a(href='/')
+                img(src='/front_pc/images/img_header_logo.png?ver=210310', alt='greating')
+            .all
+              a(href='#')
+                span.all__icon
+                  span
+                  span
+                  span
+                |                        카테고리
+              .all-menu
+                .all-menu__inner
+                  ul.all-menu__depth1
+                    li
+                      a(href='/planMeals/planMeals') 케어식단
+                      ul.all-menu__depth2
+                        li
+                          a(href='/planMeals/planMeals') 정기식단
+                          ul.all-menu__depth3
+                            li
+                              a(href='/planMeals/careLow') 저당식단
+                            li
+                              a(href='/planMeals/careLight') 칼로리식단
+                            li
+                              a(href='/planMeals/careWellness') 장수마을식단
+                            li
+                              a(href='/planMeals/careMyGreating') 마이그리팅
+                        li
+                          a(href='/main/boardDetail?freeboardId=341') 챌린지식단
+                          ul.all-menu__depth3
+                            li
+                              a(href='https://www.greating.co.kr/market/marketDetail?itemId=102760') BEAUTY FIT
+                            li
+                              a(href='https://www.greating.co.kr/market/marketDetail?itemId=102771') HI FAT
+                            li
+                              a(href='https://www.greating.co.kr/market/marketDetail?itemId=102759') PROTEIN UP
+                            li
+                              a(href='https://www.greating.co.kr/market/marketDetail?itemId=114983') INNER BALANCE
+                    li
+                      a(href='/market/marketList?ctgryId=50') 건강마켓
+                      ul#dvMainMenuCtgryList.all-menu__depth2
+                    li
+                      a(href='/market/brandMarketList') 브랜드직송관
+                  ul.all-menu__nav
+                    li
+                      a(href='/newItem/newItemList') 신상품
+                    li
+                      a(href='/best/bestList') 베스트
+            .gnb
+              ul.gnb__inner
+                li.gnb__list
+                  a.gnb__list-name(href='/planMeals/planMeals') 케어식단
+                li.gnb__list
+                  a.gnb__list-name(href='/market/marketList?ctgryId=50') 건강마켓
+                li.gnb__list
+                  a.gnb__list-name(href='/display/displayList') 기획전
+                li.gnb__list
+                  a.gnb__list-name(href='/event/eventList') 이벤트
+                li.gnb__list
+                  a.gnb__list-name(href='/story/storyMain') 스토리
+            nav.direct
+              #searchPopup.direct__search.btn__modal-open(data-login='y', data-popup-name='popup_search')
+                // 2021.09.23 YSC 상품권 내리기 <input type="text" id="searchInput2" class="search-input" placeholder="그리팅 '기프트 카드' 출시!" autocomplete="off">
+                input#searchInput2.search-input(type='text', placeholder='검색어를 입력해 주세요.', autocomplete='off')
+                a(href='#')
+                  img#dvSrhFilterBtn2(src='/front_pc/images/icon_header_search.png?ver=210304', alt='검색')
+              a.direct__cart(href='/order/orderCart')
+                span#cartCnt
+                img(src='/front_pc/images/icon_header_cart.png', alt='장바구니')
+    // 검색 팝업
+    .hd__popup.hd__popup-v2.popup_search
+      article.hd__popup__modal.modal
+        section.modal__sec
+          strong.modal__sec__title.bb-none
+            | 상품검색
+            a.btn__close-x.btn__modal-close(href='#')
+              span.hidden 레이어 팝업 닫기
+          section.input-text
+            input#searchInput.search-input(type='text', placeholder='검색어를 입력해 주세요.')
+            button#dvSrhFilterBtn.btn-init.green 검색
+          .modal__sec__cont.scroll
+            button#btnClear.btn-clear
+              span.btn-img 초기화
+            #dvGetFilterArea
+              script#dvFilterGrpTemplate(type='text/x-handlebars-template').
+                <section class="category">
+                <h3 class="category__title">{{FILTER_GRP_NAME}}</h3>
+                <ul class="box" id="dvFilterGrpSubTemplate{{FILTER_GRP_CODE}}"></ul>
+                </section>
+              script#dvFilterListTemplate(type='text/x-handlebars-template').
+                <li class="box__list hd__custom-label">
+                <input type="checkbox" class="hidden" name="{{FILTER_GRP_CODE}}_{{IL_ITEM_FILTER_ID}}" id="filter_{{IL_ITEM_FILTER_ID}}" value="{{IL_ITEM_FILTER_ID}}" data-filtername="{{FILTER_NAME}}">
+                <label for="filter_{{IL_ITEM_FILTER_ID}}">{{FILTER_NAME}}</label>
+                </li>
+            .btn
+              button#btnClear.btn-init.white
+                span.btn-img 초기화
+              button#dvSrhFilterSelectBtn.btn-init.green 선택완료
+    main#contents.hd__myInfo
+      ul.breadcrumb
+        
+      .myInfo.myPage
+        h2.hd__page-title 나의 기념일
+        .sub-wrap.hd__inner1100
+          // snb
+          aside.snb
+            h3.hidden 서브메뉴
+                    include ./common/submenu.pug
+
+          // 컨텐츠
+          .sub-cont
+            script.
+              var nonMemberYn = '';
+              if(IS_SESSION == 'N' && nonMemberYn == 'N'){
+              location.href='/login/login?reurl=' + encodeURIComponent(document.location.href);
+              }
+            section.sub-cont__sec.myWelcome
+              h3.myWelcome__info
+                span.myWelcome__info__name
+                  em 박승재
+                  | 님 반갑습니다.
+                span.myWelcome__info__group
+                  span#myPageUserInfoGrp
+                  a#myPageTotalGrp(href='/serviceCenter/benefit') 멤버십 혜택 안내
+                  a#myPageMyGrp(href='/myPage/myBenefit') 다음달 예상등급
+              .box
+                ul
+                  li.box__list
+                    span.box__list__title 배송중
+                    span.box__list__value
+                      strong#myPageUserInfoDICount
+                      | 건
+                .myWelcome__slider
+                  ul
+                    // li가 3개 이상일 경우 슬라이드로 전환 됨
+                    li.box__list
+                      span.box__list__title H.Point
+                      // H 회원 아닌 경우
+                      #MemberArea.btn
+                        a.btn__goMember.btn-init.green(href='#', onclick='fnHpointJoin()') 통합회원 가입
+                        form#hpointFrom(name='hpointFrom', method='post')
+                          input(type='hidden', name='host', value='')
+                          input(type='hidden', name='prtnrReqGb', value='03')
+                          input(type='hidden', name='prtnrId', value='')
+                          input(type='hidden', name='chnnlId', value='')
+                          input(type='hidden', name='custNm', value='')
+                          input(type='hidden', name='birthDt', value='')
+                          input(type='hidden', name='mophNo', value='')
+                          input(type='hidden', name='chId', value='')
+                          input(type='hidden', name='custUniqKey', value='')
+                          input(type='hidden', name='email', value='')
+                          input(type='hidden', name='sexGbCd', value='')
+                          input(type='hidden', name='ptcoAlliPaonInf1', value='')
+                          input(type='hidden', name='ptcoAlliPaonInf2', value='')
+                          input(type='hidden', name='ptcoReqnMdaInf', value='')
+                    li.box__list
+                      span.box__list__title 스푼
+                      span.box__list__value
+                        strong#myPageUserInfoPoint
+                          a 아무말
+            script#dvMyInfoTemplate(type='text/x-handlebars-template').
+              <section class="anniversary">
+              <h3 class="sub-cont__title">기념일 목록</h3>
+              <div class="inner">
+              <p class="anniversary__desc">
+              소중한 기념일을 등록하시면 7일 전에 알림톡을 발송해 드립니다.<br>
+              기념일은 최대 5개까지 등록 가능합니다.
+              </p>
+              <div class="input-box id">
+              <label class="input-box__label">기념일명</label>
+              <input type="text" class="input__text" id="anniversary_NANE" title="기념일 명" placeholder="기념일 명">
+              <button type="button" class="btn-init green" id="annivAddBtn" onclick="fnAnniversary();">+ 추가</button>
+              </div>
+              <div class="input-box date">
+              <label class="input-box__label">기념일</label>
+              <input type="text" class="input__text" id="anniversary_DATE" title="기념일 날짜" placeholder="기념일 (예:0822)" maxlength="4" numberOnly>
+              <ul class="date-check">
+              <li class="hd-checkbox">
+              <input type="radio" id="solar" name="date" class="checkbox__input hidden" data-checked="n" checked="">
+              <label for="solar" class="checkbox__label">양력</label>
+              </li>
+              <li class="hd-checkbox">
+              <input type="radio" id="lunar" name="date" class="checkbox__input hidden" data-checked="n">
+              <label for="lunar" class="checkbox__label">음력</label>
+              </li>
+              </ul>
+              </div>
+              <ul id="anniversaryListArea" class="box">
+              <!-- anniversaryListTemplate -->
+              </ul>
+              </div>
+              <div class="agree-box">
+              <div class="hd-checkbox">
+              <input type="checkbox" id="agree" class="checkbox__input hidden" data-checked="n">
+              <label for="agree" class="checkbox__label">개인정보 수집·이용 동의(선택)</label>
+              </div>
+              <div class="agree-table">
+              <table>
+              <thead>
+              <tr>
+              <th>수집·이용 항목</th>
+              <th>수집·이용 목적</th>
+              <th>보유 및 이용기간</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+              <td>기념일(양/음력)</td>
+              <td>알림톡 발송</td>
+              <td>회원탈퇴시 또는 법정 보유 기간</td>
+              </tr>
+              </tbody>
+              </table>
+              <p>※ 개인정보 수집·이용에 동의하셔야 서비스 이용이 가능합니다.</p>
+              </div>
+              </div>
+              </section>
+              <div class="myInfo__btn btn">
+              <button type="reset" class="btn-init white" id="btnModCancel"><strong>취소</strong></button>
+              <button type="button" class="btn-init green" id="btnModConfirm"><strong>확인</strong></button>
+              </div>
+            script#anniversaryListTemplate(type='text/x-handlebars-template').
+              <li class="anniv-info__list box__list">
+              <span class="d-day box__list__txt"><strong id="anniv_id_{{UR_ANNIVERSARY_ID}}">{{ANNIVERSARY_NAME}}</strong> | D-{{GAP}}</span>
+              <span class="date box__list__txt">{{ANNIVERSARY_DATE}} [{{SOLAR}}]</span>
+              <span class="box__list__txt"><button type="button" class="btn-half btn-white-v2 btn-init white" name="annivDelBtn">삭제</button></span>
+              <input type="hidden" id="ANNIVERSARY_NAME" value="{{ANNIVERSARY_NAME}}">
+              <input type="hidden" id="SOLAR" value="{{SOLAR}}">
+              <input type="hidden" id="ANNIVERSARY_DATE" name="ANNIVERSARY_DATE" value="{{ANNIVERSARY_DATE}}">
+
+
