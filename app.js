@@ -182,6 +182,7 @@ app.post('/login', (req, res) => {
                             }
                             else {
                                 req.session.valid = true
+                                delete req.session.user.Pwd
                                 console.log(req.session)
                                 res.redirect('/')
                             }
@@ -283,6 +284,19 @@ app.get('/story', (req, res) => {
         // console.log("user: ", req.session.user.Id)
     } else {
         res.render('story', {breadcrumbList: ["HOME", '스토리'], sessionValid: req.session.valid})
+    }
+})
+app.get('/planmeals', (req, res) => {
+    if (req.session.valid) {
+        res.render('planmeals', {
+            breadcrumbList: ["HOME", '케어식단'], 
+            sessionValid: req.session.valid, 
+            userId: req.session.user.Id,
+            user : req.session.user
+        })
+        // console.log("user: ", req.session.user.Id)
+    } else {
+        res.render('planmeals', {breadcrumbList: ["HOME", '케어식단'], sessionValid: req.session.valid})
     }
 })
 // app.get('/post', (req, res) => {

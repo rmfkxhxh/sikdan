@@ -46,11 +46,13 @@ body.hd#myOrderList
 
                   script.
                     function addMonths(date, months) {
-                    var temp = String(date.getFullYear()+ '-' + date.getMonth() + '-' + date.getDate());
+                    var temp = String(date.getFullYear()+ '-' + (parseInt(date.getMonth())+1) + '-' + date.getDate());
                     document.getElementById("END").value = temp;
                     date.setMonth(date.getMonth() + months);
-                    var temp1 = String(date.getFullYear()+ '-' + date.getMonth() + '-' + date.getDate());
+                    var temp1 = String(date.getFullYear()+ '-' + (parseInt(date.getMonth())+1) + '-' + date.getDate());
                     document.getElementById("START").value = temp1;
+                    //- alert(date)
+                    //- alert(date.getMonth()+1)
                     }
 
                   .col.check-cal

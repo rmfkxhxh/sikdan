@@ -1,0 +1,59 @@
+doctype html
+head
+  meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+  include ./common/head.pug
+  
+  body#couponList.hd
+    .meals.v2
+      section.meals__sec.hd__inner1100
+        h2.meals__title
+          img(src='/front_pc/images/img_meals_tit.png?ver=210324', alt='MEAL PLAN')
+        p.meals__subtitle 정기식단 프로그램
+        ul.moreView
+          li
+            a(href='/main/boardDetail?freeboardId=199')
+              | 정기식단 프로그램이 뭔가요? 
+              i
+          li
+            a(href='/main/boardDetail?freeboardId=179')
+              | 주문은 어떻게 하나요?  
+              i
+        ul.meals__banner
+          li
+            a(href='/planMeals/careLow', target='_self')
+              img(src='https://image.greating.co.kr/DP/banner/202103/148381CD99A54CB7883D587F031184FC.png', alt='')
+          li
+            a(href='/planMeals/careLight', target='_self')
+              img(src='https://image.greating.co.kr/DP/banner/202103/C0BBD914778E482C82E6754AC8A05852.png', alt='')
+          li
+            a(href='/planMeals/careWellness', target='_self')
+              img(src='https://image.greating.co.kr/DP/banner/202103/4EC252AA63724D1589FDB6D2B4F41E25.png', alt='')
+          li
+            a(href='/planMeals/careMyGreating', target='_self')
+              img(src='https://image.greating.co.kr/DP/banner/202103/8EBBAC230A7F4E7697AA57E6E0DD83F7.png', alt='')
+      section.meals__sec.challenge
+        h2.meals__title
+          a(href='/main/boardDetail?freeboardId=341')
+            img(src='/front_pc/images/img_challenge_tit.png?ver=210324', alt='CHALLENGE')
+            i
+        p.meals__subtitle 건강관리가 쉬워지는 그리팅 챌린지
+        ul.challenge__banner.hd__inner1100
+          li
+            a(href='/market/marketDetail?itemId=102760', target='')
+              img(src='https://image.greating.co.kr/DP/banner/202109/6E362ECAB243459984F938A9EBB82F02.png', alt='')
+          li
+            a(href='/market/marketDetail?itemId=102759', target='')
+              img(src='https://image.greating.co.kr/DP/banner/202109/C4124B58974B45F5B686F58FCB6C7211.png', alt='')
+          li
+            a(href='/market/marketDetail?itemId=102771', target='')
+              img(src='https://image.greating.co.kr/DP/banner/202109/608CA04D39D143FBA6BC4881405E6C51.png', alt='')
+          li
+            a(href='/market/marketDetail?itemId=114983', target='')
+              img(src='https://image.greating.co.kr/DP/banner/202109/CD243259F41045809E748698C1AEF3CB.png', alt='')
+      section.market__sect.inquiry
+        h2.inquiry__title.strong 도움이 필요하세요?
+        p.inquiry__subtitle 정기식단 서비스에 대한 궁금한 사항을 문의하세요
+        .icon-area
+          a.icon-area-phone(href='/serviceCenter/serviceCenterMain', title='고객센터') 고객센터
+          a.icon-area-kakao(href='javascript:csKakao();', title='카카오톡 문의') 카카오톡 문의
+
