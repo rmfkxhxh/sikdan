@@ -1,0 +1,443 @@
+doctype html
+// 세션 세팅
+head
+  // Global site tag (gtag.js) - Google Analytics
+  script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-154592972-1')
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-154592972-1', { 'optimize_id': 'OPT-PKR6F5B'});
+  // Google Tag Manager
+  script.
+    (function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+    'gtm.start' : new Date().getTime(),
+    event : 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l='
+    + l
+    : '';
+    j.async = true;
+    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KN4Z3B7');
+  //
+    Anti-flicker snippet (recommended)
+    2020.10.30 내용 추가 Lee Seung Hwan
+  style.
+    .async-hide { opacity: 0 !important}
+  script.
+    (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+    })(window,document.documentElement,'async-hide','dataLayer',4000,
+    {'OPT-PKR6F5B':true});
+  // End Google Tag Manager
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  link(rel='shortcut icon', href='/front_mo/images/favicon.png')
+  // 캐싱 방지
+  meta(http-equiv='Cache-Control', content='no-cache')
+  meta(http-equiv='Expires', content='0')
+  meta(http-equiv='Pragma', content='no-cache')
+  meta(name='description', content='현대그린푸드의 맛있는 건강식 브랜드. 건강을 지키는 매일의 밥상이 고민이라면 그리팅에게 맡기세요!')
+  meta(name='keywords', content='건강식, 저당식단, 식단, 다이어트, 요리, 케어푸드, 케어식단, 당뇨식단, 샐러드, 건강반찬, 집반찬')
+  //
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="">
+  meta(name='naver-site-verification', content='49f329b3500e0ef809330afe474320e886234a7f')
+  // 현대장터일땐 OGTAG 삭제 타이틀 관련 분기처리
+  meta#forDisplayId(property='og:title', content='그리팅몰 :: 우리집 밥상주치의, 그리팅')
+  title#forDisplayIdTitle &#xADF8;&#xB9AC;&#xD305;&#xBAB0; :: &#xC6B0;&#xB9AC;&#xC9D1; &#xBC25;&#xC0C1;&#xC8FC;&#xCE58;&#xC758;, &#xADF8;&#xB9AC;&#xD305;
+  // 현대장터일땐 OGTAG 삭제 타이틀 관련 분기처리
+  // 현대장터일땐 OGTAG 삭제
+  meta(property='og:image', content='https://www.greating.co.kr/front_pc/images/og_image.jpg?ver=210317')
+  meta(property='og:image:secure_url', content='https://www.greating.co.kr/front_pc/images/og_image.jpg?ver=210317')
+  meta(property='og:site_name', content='')
+  meta(property='og:type', content='website')
+  meta(property='og:description', content='현대그린푸드의 맛있는 건강식 브랜드. 건강을 지키는 매일의 밥상이 고민이라면 그리팅에게 맡기세요!')
+  // <meta property="og:url" content="http://www.greating.co.kr">
+  // 2020.05.15 LHJ - 상품상세 공유하기 URL 동적처리
+  meta(property='og:url', content='https://www.greating.co.kr')
+  // 페이스북 마이크로데이터 추가 2020.10.29 Lee Seung Hwan
+  meta(property='product:brand', content='현대그린푸드')
+  meta(property='product:availability', content='in stock')
+  meta(property='product:price:amount', content='')
+  meta(property='product:price:currency', content='KRW')
+  meta(property='product:retailer_item_id', content='')
+  meta(property='＂product:item_group_id＂', content='')
+  // 현대장터일땐 OGTAG 삭제 끝
+  script(src='https://www.youtube.com/iframe_api')
+  link(rel='stylesheet', type='text/css', href='/front_pc/src/css/main.css?ver=211130')
+  link(rel='stylesheet', type='text/css', href='/front_pc/src/css/jquery-ui.css')
+  script(src='/front_pc/src/js/main.js?dt=211015')
+  script(src='/front_pc/src/js/vendor.js?ver=201215')
+  // <script type="text/javascript" src="/pc/greating/js/jquery.min.js"></script>
+  // sso 로그인
+  script(src='/pc/greating/js/etc_js/SsoHttpRequest.js?dt=20210705', type='text/javascript')
+  script(src='/pc/greating/js/etc_js/SsoAjax.js', type='text/javascript')
+  // <script src="/pc/greating/js/etc_js/SsoHttpRequest2.js" type="text/javascript"></script>
+  script.
+    var IS_SESSION        = 'Y';
+    var S_APP_TYPE        = '';
+    var S_APP_DEVICE_ID   = '';
+    var S_USER_AGENT_TYPE = 'pc';
+    var NAME_AUTO_LOGIN = '';
+    var COMMENT_AUTO_LOGIN = '';
+    var AUTO_LOGIN_TYPE = '';
+    var SS_KAKAO_ID = '3ee3b3c91fa6a9e9be6b05253143a90b';
+    var SS_GOOGLE_ID = '283629689379-jah2npvrit3jlp62lia82drph2vrgfru.apps.googleusercontent.com';
+    var SS_SITE_DOMAIN = 'https://www.greating.co.kr:443';
+    var SS_LOGIN_ID = 'qkrtmdwo28';
+    var SS_LOGIN_NM = '박승재';
+    var SS_PW_CHANGE_YN = 'N';
+    var SS_MCUST_NO = '';
+    var SS_BL_USER_YN = 'N';
+    var SS_FS_CODE = '';
+    var SS_LOGIN_TYPE = '0';
+    var SS_BAND_ID = '1';
+    var SS_SOCIAL_TYPE = '';
+    var SS_HPOINT_JOIN_CODE = '0';
+    var SS_MCUST_NO_ENCRYPT = '';
+    var SS_IS_HM_BUYER = 'false';
+    var SS_UR_USER_ID = '1501267';
+    var SS_GROUP_ID = '6';
+    var SS_B2C_CODE = '';
+    var SS_B2B_CODE = '';
+    var REQUEST_PATH_NAME = window.location.pathname;
+    var SS_BAND_NAME = "";
+    switch(SS_BAND_ID){
+    case "1" :
+    SS_BAND_NAME = '일반'; break;
+    case "2" :
+    SS_BAND_NAME = '사업자'; break;
+    case "3" :
+    SS_BAND_NAME = '임직원'; break;
+    case "4" :
+    SS_BAND_NAME = '특수'; break;
+    case "5" :
+    SS_BAND_NAME = 'B2B제휴'; break;
+    case "6" :
+    SS_BAND_NAME = 'B2C제휴'; break;
+    case "7" :
+    SS_BAND_NAME = 'CS'; break;
+    default : ''
+    }
+    var SS_GROUP_NAME = "";
+    switch(SS_GROUP_ID){
+    case "4" :
+    SS_GROUP_NAME = 'Green'; break;
+    case "5" :
+    SS_GROUP_NAME = 'White'; break;
+    case "6" :
+    SS_GROUP_NAME = 'Friends'; break;
+    case "7" :
+    SS_GROUP_NAME = 'Black'; break;
+    default : ''
+    }
+    // 	console.log("IS_SESSION:"+IS_SESSION, "S_APP_TYPE:"+S_APP_TYPE, "S_APP_DEVICE_ID:"+S_APP_DEVICE_ID, "S_USER_AGENT_TYPE:"+S_USER_AGENT_TYPE);
+    window.addEventListener('focus', function() {
+    //console.log('homepage in');
+    }, false);
+    // sso 로그인 체크
+    if( IS_SESSION == 'N' && sessionStorage.getItem('LOGIN_MCUST_NO') == null && REQUEST_PATH_NAME.indexOf('inactiveMember') == -1 ){
+    gfnSsoReqHttp(fnSsoReqCallback);
+    }
+    // 통합회원 로그아웃 체크
+    if( IS_SESSION == 'Y' && SS_LOGIN_TYPE == '1' && sessionStorage.getItem('LOGIN_MCUST_NO') == null ) {
+    if(location.host.indexOf('localhost') != 0){
+    gfnSsoReqHttp(fnSsoLogoutReqCallback);
+    }
+    }
+    // SSO요청 처리 callback
+    function fnSsoReqCallback(data) {
+    console.log(data);
+    if(data.succYn == 'Y'){
+    gfnSsoLogin(data.mcustNo);
+    }
+    if( sessionStorage.getItem('POPUP_YN') != 'Y' && data.mcustNo != null && SS_HPOINT_JOIN_CODE == '') {
+    sessionStorage.setItem('POPUP_YN', 'Y');
+    setTimeout(
+    fnConfirm('현재 고객님은 H.Point 회원입니다.\\nH.Point 통합회원 정보로 그리팅에 회원가입이 가능합니다. 진행하시겠습니까?', function(e){
+    if(gfnServerCheck() == 'REAL'){
+    // todo : carrot sso로그인 운영쪽으로 확정되면 주석 해제요망
+    HMEMBERSHIP_API_HOST = "https://www.h-point.co.kr"; //운영 - https
+    }else{
+    HMEMBERSHIP_API_HOST = "https://dev.h-point.co.kr:29835"; //개발
+    }
+    var popTitle = 'hpoint_popup';
+    var action = HMEMBERSHIP_API_HOST + '/cu/join/simpJoinStart.nhd';
+    var hpointForm = document.createElement("form");
+    hpointForm.setAttribute("method", "post");
+    hpointForm.setAttribute("name", "hpointForm");
+    hpointForm.setAttribute("id", "hpointForm");
+    hpointForm.setAttribute("action", action);
+    var prtnrId = document.createElement("input");
+    prtnrId.setAttribute("type", "hidden");
+    prtnrId.setAttribute("name", "prtnrId");
+    prtnrId.setAttribute("value", 'D050');
+    hpointForm.appendChild(prtnrId);
+    var chnnlId = document.createElement("input");
+    chnnlId.setAttribute("type", "hidden");
+    chnnlId.setAttribute("name", "chnnlId");
+    chnnlId.setAttribute("value", '1402');
+    hpointForm.appendChild(chnnlId);
+    var ssoMcustNo = document.createElement("input");
+    ssoMcustNo.setAttribute("type", "hidden");
+    ssoMcustNo.setAttribute("name", "ssoMcustNo");
+    ssoMcustNo.setAttribute("value", data.mcustNo);
+    hpointForm.appendChild(ssoMcustNo);
+    document.body.appendChild(hpointForm);
+    console.log("SS_MCUST_NO_ENCRYPT: " + SS_MCUST_NO_ENCRYPT);
+    console.log("SS_MCUST_NO:         " + data.mcustNo);
+    var param = '&prtnrId=' + $("#hpointForm").find('[name=prtnrId]').val();
+    param += '&chnnlId=' + $("#hpointForm").find('[name=chnnlId]').val();
+    param += '&ssoMcustNo=' + $("#hpointForm").find('[name=ssoMcustNo]').val();
+    param += '&ptcoReqnMdalInf=&ptcoReqnOnoflnGb=';
+    console.log("param =====> : " + param)
+    window.open("", popTitle); //팝업 창으로 띄우기. 원치 않으면 주석.
+    hpointForm.target = popTitle;
+    hpointForm.submit();
+    }), 2);
+    }
+    }
+    // sso로그아웃시 callback
+    function fnSsoLogoutReqCallback(data) {
+    if(data.succYn == 'N'){
+    gfnHLogout();
+    }
+    }
+  style.
+    .pop_wrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    }
+    .pop_wrap__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 400px;
+    padding: 30px;
+    background: #FFF;
+    transform: translate3d(-50%, -50%, 0);
+    }
+    .pop_wrap__inner .pop_content {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 26px;
+    }
+    .pop_content .btn_close {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 30px;
+    height: 20px;
+    font: 0/0 a;
+    }
+    .pop_wrap__inner .btn.alert {
+    width: 220px;
+    }
+    .pop_wrap__inner .btn.confirm {
+    width: 440px;
+    }
+    .pop_wrap__inner .btn .btn-init {
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 600;
+    }
+// //head include
+script(type='application/Id+json').
+  {
+  "@context":"http://schema.org",
+  "@type":"Person",
+  "name":"그리팅몰 :: 우리집 밥상주치의, 그리팅",
+  "url": "https://www.greating.co.kr",
+  "sameAs":[
+  "https://www.instagram.com/greating.official",
+  "https://blog.naver.com/h_greating",
+  "https://www.youtube.com/c/그리팅tv"
+  ]
+  }
+// //head include
+script(type='text/javascript').
+  /**
+  *  구글 태깅
+  *
+  */
+  function gaClickTagging(ilItemId, itemName, listName, category, itemPrice,brand,idx) {
+  var params =  {'IL_ITEM_ID':ilItemId};
+  var category =  category;
+  /**
+  *   gtag 관련 정보를 가져와서 보낸다.
+  *   일단 IL_ITEM_ID 만 적용 추후 요청 있을시 해당 로직 변경해가며 사용할것
+  *
+  */
+  fnAjax({
+  url : '/newItem/getGtagItem'
+  ,params:params
+  ,async:false
+  ,success : function (data){
+  if(data.CTGRY_FULL_NAME_CUST.length> 0){
+  category = data.CTGRY_FULL_NAME_CUST[0].CTGRY_FULL_NAME_CUST;
+  }
+  }
+  });
+  gtag('event', 'select_content', {
+  "content_type" : "product",
+  "items" : [ {
+  "id" : ilItemId,
+  "name" : itemName,
+  "list_name" : listName,
+  "category" : category,
+  "quantity" : 1,
+  "price" : itemPrice,
+  "brand": brand,
+  "list_position": idx
+  } ]
+  });
+  }
+  function gaPromotionClickTagging(promotionId, promotionName) {
+  gtag('event', 'select_content', {
+  "promotions" : [ {
+  "id" : promotionId,
+  "name" : promotionName
+  } ]
+  });
+  }
+  function goBannerLink(promotionId, promotionName, promotionUrl) {
+  gaPromotionClickTagging(promotionId, promotionName);
+  location.href = promotionUrl;
+  }
+// 2021.08.12 YSC Braze 솔루션 SDK 추가
+script(type='text/javascript').
+  var BRAZE_WEB_APP_ID = '7733d22e-db3b-44a4-aefb-ab3af50339d7';
+  var BRAZE_SDK_BASE_URL = 'sdk.iad-05.braze.com';
+  var BRAZE_SDK_APPBOY_URL = 'https://js.appboycdn.com/web-sdk/3.3/appboy.min.js';
+  +function(a,p,P,b,y){a.appboy={};a.appboyQueue=[];for(var s="DeviceProperties Card Card.prototype.dismissCard Card.prototype.removeAllSubscriptions Card.prototype.removeSubscription Card.prototype.subscribeToClickedEvent Card.prototype.subscribeToDismissedEvent Banner CaptionedImage ClassicCard ControlCard ContentCards ContentCards.prototype.getUnviewedCardCount Feed Feed.prototype.getUnreadCardCount ControlMessage InAppMessage InAppMessage.SlideFrom InAppMessage.ClickAction InAppMessage.DismissType InAppMessage.OpenTarget InAppMessage.ImageStyle InAppMessage.Orientation InAppMessage.TextAlignment InAppMessage.CropType InAppMessage.prototype.closeMessage InAppMessage.prototype.removeAllSubscriptions InAppMessage.prototype.removeSubscription InAppMessage.prototype.subscribeToClickedEvent InAppMessage.prototype.subscribeToDismissedEvent FullScreenMessage ModalMessage HtmlMessage SlideUpMessage User User.Genders User.NotificationSubscriptionTypes User.prototype.addAlias User.prototype.addToCustomAttributeArray User.prototype.getUserId User.prototype.incrementCustomUserAttribute User.prototype.removeFromCustomAttributeArray User.prototype.setAvatarImageUrl User.prototype.setCountry User.prototype.setCustomLocationAttribute User.prototype.setCustomUserAttribute User.prototype.setDateOfBirth User.prototype.setEmail User.prototype.setEmailNotificationSubscriptionType User.prototype.setFirstName User.prototype.setGender User.prototype.setHomeCity User.prototype.setLanguage User.prototype.setLastKnownLocation User.prototype.setLastName User.prototype.setPhoneNumber User.prototype.setPushNotificationSubscriptionType InAppMessageButton InAppMessageButton.prototype.removeAllSubscriptions InAppMessageButton.prototype.removeSubscription InAppMessageButton.prototype.subscribeToClickedEvent display display.automaticallyShowNewInAppMessages display.destroyFeed display.hideContentCards display.showContentCards display.showFeed display.showInAppMessage display.toggleContentCards display.toggleFeed changeUser destroy getDeviceId initialize isPushBlocked isPushGranted isPushPermissionGranted isPushSupported logCardClick logCardDismissal logCardImpressions logContentCardsDisplayed logCustomEvent logFeedDisplayed logInAppMessageButtonClick logInAppMessageClick logInAppMessageHtmlClick logInAppMessageImpression logPurchase openSession registerAppboyPushMessages removeAllSubscriptions removeSubscription requestContentCardsRefresh requestFeedRefresh requestImmediateDataFlush resumeWebTracking setLogger setSdkAuthenticationSignature stopWebTracking subscribeToContentCardsUpdates subscribeToFeedUpdates subscribeToInAppMessage subscribeToNewInAppMessages subscribeToSdkAuthenticationFailures toggleAppboyLogging trackLocation unregisterAppboyPushMessages wipeData".split(" "),i=0;i<s.length;i++){for(var m=s[i],k=a.appboy,l=m.split("."),j=0;j<l.length-1;j++)k=k[l[j]];k[l[j]]=(new Function("return function "+m.replace(/\\./g,"_")+"(){window.appboyQueue.push(arguments); return true}"))()}window.appboy.getCachedContentCards=function(){return new window.appboy.ContentCards};window.appboy.getCachedFeed=function(){return new window.appboy.Feed};window.appboy.getUser=function(){return new window.appboy.User};(y=p.createElement(P)).type='text/javascript';
+  y.src=BRAZE_SDK_APPBOY_URL;
+  y.async=1;(b=p.getElementsByTagName(P)[0]).parentNode.insertBefore(y,b)
+  }(window,document,'script');
+  //initialize the SDK
+  appboy.initialize(BRAZE_WEB_APP_ID, {
+  baseUrl: BRAZE_SDK_BASE_URL
+  });
+  appboy.registerAppboyPushMessages();
+  appboy.display.automaticallyShowNewInAppMessages();
+  //optionally set the current user's External ID
+  if(SS_UR_USER_ID !="" && SS_UR_USER_ID !=null && SS_UR_USER_ID != undefined)
+  {
+  console.log("external_id set");
+  appboy.changeUser(SS_UR_USER_ID);
+  //appboy.getUser().setCustomUserAttribute("UR_USER_ID", SS_UR_USER_ID);
+  appboy.getUser().setCustomUserAttribute("FirstName", SS_LOGIN_NM);
+  }
+  if(SS_HPOINT_JOIN_CODE != 0)	{ appboy.getUser().setCustomUserAttribute("HMEMBER_YN", "Y"); } 	// 통합회원여부
+  if(SS_IS_HM_BUYER == "true")	{ appboy.getUser().setCustomUserAttribute("HM_MARKET_YN", "Y"); } 	// 현대장터회원여부
+  //if(AMORE_YN == "Y")			{ appboy.getUser().setCustomUserAttribute("AMORE_YN", "Y"); } 		// 아모레회원여부
+  if(IS_SESSION == 'Y'){
+  appboy.getUser().setCustomUserAttribute("MEMBER_GRADE", SS_GROUP_NAME);
+  var memberGroup;
+  if(SS_BAND_ID == 5){
+  memberGroup = SS_BAND_NAME + '_' + SS_B2B_CODE;
+  } else if(SS_BAND_ID == 6){
+  memberGroup = SS_BAND_NAME + '_' + SS_B2C_CODE;
+  } else{
+  memberGroup = SS_BAND_NAME;
+  }
+  appboy.getUser().setCustomUserAttribute("MEMBER_GROUP", memberGroup);
+  if(document.referrer.indexOf('/login/login') > -1){
+  appboy.logCustomEvent('loginSuccess');
+  }
+  }
+  // start (or continue) a session
+  appboy.openSession();
+  //appboy.logCustomEvent("prime-for-push");
+  window.onload = function(){
+  if(document.referrer.indexOf('/login/login') > -1){
+  fnAjax({
+  url : '/biz/join/joinCompleteData'
+  ,async:false
+  ,success : function (data) {
+  var userName = data.USER_NAME;
+  var joinDate = data.JOIN_DATE;
+  var bday = data.BDAY;
+  var healthInfoArr = data.HEALTH_INFO;
+  appboy.getUser().setFirstName(userName);
+  appboy.getUser().setDateOfBirth(bday.substring(0, 4), bday.substring(4, 6), bday.substring(6, 8));
+  appboy.getUser().setCustomUserAttribute("JOIN_DATE", new Date(joinDate));
+  appboy.getUser().setCustomUserAttribute("HEALTH_INFO", null);
+  $.each(healthInfoArr, function (idx) {
+  appboy.getUser().addToCustomAttributeArray("HEALTH_INFO", healthInfoArr[idx].HEALTH_NAME);
+  });
+  // 마케팅 수신 동의 여부
+  if (data.MARKETING_AGREE == 'N') {
+  appboy.getUser().setPushNotificationSubscriptionType(appboy.User.NotificationSubscriptionTypes.UNSUBSCRIBED);
+  } else {
+  appboy.getUser().setPushNotificationSubscriptionType(appboy.User.NotificationSubscriptionTypes.OPTED_IN);
+  }
+  }
+  });
+  }
+  }
+style
+    include ../css/main.css
+    include ../css/jquery.css
+
+//- style(type="text/css")
+//-  h1 {
+//-    font-size : "12px;"
+//-  }
+
+
+body.hd#paymentResult
+
+        noscript
+          iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-KN4Z3B7', height='0', width='0', style='display:none;visibility:hidden')
+        // End Google Tag Manager (noscript)
+        #wrap
+          include ./header.pug
+
+        #wrap
+          main#contents.hd__orderComplete
+            ul.breadcrumb
+              li HOME
+              li 주문완료
+
+        p(style="text-align:center;") 
+          | 주문을 완료하였습니다.
+          br
+          | 배송이 곧 시작 됩니다.
+          br
+          | 조금만 기달려 주세요.
+
+
+
+
+        h1 주문상품 목록
+
+
+        h1 결제금액
+
+        h1 배송지 정보
+
+        .title 이름
+            .infomation2#name(name='name') #{name}
+
+            .title 주소
+            .infomation2#address(name='address') #{address}
+
+            .title 상세 주소
+            .infomation2#detailAddress(name='detailAddress') #{detailAddress}
+
+            .emptyBtn(type='submit')
+
